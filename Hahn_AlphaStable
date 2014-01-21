@@ -1,64 +1,60 @@
-\documentclass[8pt,journal,compsoc]{IEEEtran}
-\usepackage[pdftex]{graphicx}
-\usepackage{amsfonts}
-\begin{document}
 
-\title{Alpha-Stable Distributions and Saccadic Foraging}
 
-\author{William Edward Hahn, Elan Barenholtz% <-this % stops a space
-\IEEEcompsocitemizethanks{\IEEEcompsocthanksitem W. E. Hahn is with the Center for Complex Systems and Brain Sciences at Florida Atlantic University, FL, 33431 \protect\\
-E-mail: see http://www.ccs.fau.edu/$\sim$hahn/
-\IEEEcompsocthanksitem Elan Barenholtz is with the Department of Psychology and the Center for Complex Systems and Brain Sciences at Florida Atlantic University, FL, 33431 \protect\\
-E-mail: see http://psy2.fau.edu/~barenholtz/}% <-this % stops a space
-\thanks{Manuscript received January 14, 2014; revised January 14, 2014.}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@article{aks20051,
+  title={1/f dynamic in complex visual search: Evidence for self-organized criticality in human perception},
+  author={Aks, Deborah J},
+  journal={Tutorials in contemporary nonlinear methods for the behavioral sciences},
+  pages={326--359},
+  year={2005}
+}
 
 
 
 
-\markboth{FAU - Spring 2014}%
-{Hahn \MakeLowercase{\textit{et al.}}: Alpha-Stable Distributions}
+Can the eye movement data be described by a power law, and do the data possess scale invariance associated with a self-organizing complex system? A linear function on a double-log plot produced by FFT indicates the presence of a power law. The regression slope of this function, denoted by ?, is the power exponent.
+
+
+An important aspect of spectral analysis is that it serves as a useful measure of the strength of memory across the system. Revealing temporal correlation is important not only in assessing whether memory exists across eye-movements, but the magnitude of the exponent also quantifies memory strength. 
+
+The steepness of the slope (on a log-log scale) reflects the duration of memory (i.e., correlation across points). As shown in ure 7.2, Brown (1/f2) noise has a steep slope, indicating short-term correlation. 
+
+Pink (1/f1) noise has a shallow slope, indicating extremely long time correlation, and white (1/f0) noise, with its flat spectrum, indicates no correlation across data points. Implications for these trends are described in the Discussion section, including how pink noise hints at a process that has important self-organizing properties.
+
+According to conventional theory and common sense, visual search utilizes information from previous fixations to guide subsequent search. 
+
+Memory models of visual search incorporate mechanisms such as inhibitory tagging (Klein, 1988) or identification of previously searched items (e.g., Irwin, 1992; Jonides, Irwin, & Yantis, 1981). 
+
+Horowitz and Wolfe (1998) is a recent example of research that challenges the assumption that search is guided by memory from previous fixations. 
+
+Doubts about a memory-based guidance emerge from their findings of RTs being unaffected by randomly repositioned items, together with recent research showing that visual memory is often surprisingly poor (Melcher & Kowler, 2001; Rensink, O’Regan, & Clark, 1997; Simons & Levins, 1997) and that the visual system retains little information about the locations (or identity) of objects over time. 
+
+Instead, the visual system seems to act on fleeting neural representations that are overwritten by a change in the visual scene.
+
+ Horowitz and Wolfe’s (1998) claim that visual search does not keep track of previously searched locations comes from their examination of overall RTs to complete visual search. 
+ 
+ However, relying on such a coarse measure of behavior means that subtle contingencies in scanning behavior can be overlooked. Direct analyses of the eye movements revealed a less obvious form of memory.
+ 
+The key finding that a sequence of fixations can be represented by a power law function confirmed our prediction that search might be guided by a memory of previous fixations. 
+
+Contrary to Horowitz and Wolfe (1998), we found that search behavior was not random and that contingencies did in fact exist across fixations. 
+While much cognitive theory implicates search mechanisms such as tagging and inhibition of
+return (to previously visited items), the form of memory we have found involves general contingencies across fixations. 
+
+The 1/f power law is a signature of these contingencies. 
+
+The power law further indicates that the system has scale-invariant properties typically associated with a system optimized to adapt to a changing environment. 
+
+Since systems characterized by power functions are known to be flexible, this suggests that the contingencies guiding search may play an important role in selection of appropriate information in an array of constantly changing environmental information. 
+
+The IFS clumpiness tests confirmed the results of the power spectral analyses, showing that differences across fixations revealed pink (1/f) noise. 
+
+These results suggest a long-term memory is maintained across complicated search in a manner that may involve the use of a simple set of rules with self-organizing properties (i.e., variants of Bak et al., 1988; Jensen, 1998).
 
 
 
-
-
-
-\IEEEcompsoctitleabstractindextext{%
-\begin{abstract}
-
-
-
-
-\end{abstract}
-
-\begin{IEEEkeywords}
-Alpha-Stable, Levy, Foraging, HVS, Search, Visual Saliency
-\end{IEEEkeywords}}
-
-
-\maketitle
-
-
-\IEEEdisplaynotcompsoctitleabstractindextext
-
-\IEEEpeerreviewmaketitle
-
-%\onecolumn
-
-\section{Introduction}
-
-
-Alpha-stable distributions are a family of four parameter heavy-tail distributions that generalize the normal distribution and have been shown to be advantageous when searching for randomly and sparsely distributed resources. Research remains limited because closed form analytic expressions for these non-Gaussian distributions are not available. Recently these curves have characterized in the frequency domain and efficient algorithms involving Fast Fourier Transform (FFT) have been developed to numerically approximate these expressions.  An optimal foraging strategy must balance intensification with diversification, exploration with exploitation, searching around the current solutions while making sure to explore the space efficiently. Research gathering animal behaviors of many species show that foragers try to minimize the distance travelled between targets to maximize their energy gain. Gaze shifts in the human visual system (HVS) can be thought of as the visual system foraging for areas rich in visual saliency. The visual system must decide when an image region has undergone sufficient processing to move to a new location. Given the limited perceptive range and informational capacity of the visual system, what is an optimal eye-movement strategy? While previous research has considered which image locations are informationally rich, much less research has considered general factors of saccadic movements, such as how often and how far the eyes should move under an optimal information-gathering strategy. Statistical models show overlap between simple animal foraging and gaze relocation. In this work, we develop new graphics processing units (GPU) techniques for the estimation of alpha-stable distribution parameters. There are many methods for fitting alpha-stable distributions and mixtures of alpha-stable distributions.The FFT provides a convent and fast method for approximating alpha-stable distributions. For Maximum Likelihood Estimation Methods (MLE) many FFT would be required thus justifying the use of the GPU. These high speed numerical methods allow of for the fitting alpha-stable parameters to a variety of HVS measurements including the focus here: saccadic distributions. Eye tracking data is typically first characterized by a thresholding into fixations and saccades and the two data subsets are then analyzed separately. Here we employ recently developed numerical techniques that allow for the characterization of distributions with heavy tails. This modern characterization allows the entire dataset to be analyzed as a whole. The primary parameter of interest is the first parameter alpha $alpha$. This parameter determines how heavy the tail of the distribution will be. For example for $\alpha=2$ we have the special case of the Gaussian curve, with this normal distribution we would not expect many samples more than 3 sigma from the mean, with a heavy tail distribution $\alpha<2$ there will be a nonzero chance of finding a sample many times the standard deviation from the mean. Intuitively this means that most samples will be close zero and everyone once in a while there is a very large sample drawn. Many natural systems behave in this manner with a many small changes punctuated infrequently by very large events.Data suggests that eye movement distributions are well described by alpha-stable distributions and thus do not have closed form solutions and should be characterized by numerical approximations of stable distributions. With a higher resolution in the fovea and limited processing resources we can think of visual saccades as a searching mechanism. Visual search is analogous to animal foraging in the sense that it is not feasible to sample the entire search space and limited resources constrain the behavior. The HVS is foraging for information rich or salient regions and because resources are limited the sensing mechanism must compress the data stream as it is sampled. Human scanpath behavior can thus be thought of as a search strategy or infotaxis mechanism. Heuristic search is a branch of soft computing in the sense that rigorous proofs are not available to guarantee that the algorithm will terminate with a solution. Often in many real world problems exact solutions are often not necessary and feasible or potentials solution are desired. For many interesting problems a potential solution can be validated in polynomial time but the generation of a optimal solution can be exponential in its running time. Even for fitness functions that will run in polynomial time it is still prohibitive to brute force the design space to find the optimal solution. For even many trivial tasks, the curse of dimensionality ensures that systematic Cartesian search will never pan out. Modern heuristic search algorithms rely on the injection of outside noise for the generation of potential solutions. Could it be that the HVS also inject noise into the search procedure? If so, what type of noise would be ideal? In the mathematical optimization algorithms alpha-stable distributions have been shown to be advantageous in n-dimensional search. This work is an attempt to characterize human saccade and scan path behavior and identify task specific and subject differences. The HVS is able to traverse larges swaths of the fitness (saliency) landscape quickly and settle on a solution. 
-
-
-
-
-\section{MMS}
-The Methodology, Measurement, and Statistics (MMS) Program is an interdisciplinary program in the Social, Behavioral, and Economic Sciences that supports the development of innovative analytical and statistical methods and models for those sciences. 
-
-MMS seeks proposals that are methodologically innovative, grounded in theory, and have potential utility for multiple fields within the social and behavioral sciences.  
-
-As part of its larger portfolio, the MMS Program partners with a consortium of federal statistical agencies to support research proposals that further the development of new and innovative approaches to surveys and to the analysis of survey data.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -66,565 +62,1378 @@ As part of its larger portfolio, the MMS Program partners with a consortium of f
 
 
 
+@article{boccignone2004modelling,
+  title={Modelling gaze shift as a constrained random walk},
+  author={Boccignone, Giuseppe and Ferraro, Mario},
+  journal={Physica A: Statistical Mechanics and its Applications},
+  volume={331},
+  number={1},
+  pages={207--218},
+  year={2004},
+  publisher={Elsevier}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+@inproceedings{boccignone2010gaze,
+  title={Gaze shifts as dynamical random sampling},
+  author={Boccignone, Giuseppe and Ferraro, Mario},
+  booktitle={Visual Information Processing (EUVIP), 2010 2nd European Workshop on},
+  pages={29--34},
+  year={2010},
+  organization={IEEE}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+@article{boccignone2012gaze,
+  title={Gaze shift behavior on video as composite information foraging},
+  author={Boccignone, Giuseppe and Ferraro, Mario},
+  journal={Signal Processing: Image Communication},
+  year={2012},
+  publisher={Elsevier}
+}
+
+
+The ability to predict, given an image or a video, where a human might fixate elements of a viewed scene has long been of interest in the vision community. 
+
+However, one point that is not addressed by the great majority of computational models is the variability exhibited by different observers when viewing the same scene, or even by the same subject along different trials. 
+
+Here we present a model of gaze shift behavior which is driven by a composite foraging strategy operating over a time varying visual landscape and accounts for such variability.
+
+The system performs a deterministic walk if in a neighborhood of the current position of the gaze there exists a point of sufficiently high saliency; otherwise the search is driven by a Langevin equation whose random term is generated by an a-stable distribution.
+
+Results of the simulations on complex videos from the publicly available University of South California CRCNS eye-1 dataset are compared with eye-tracking data and show that the model yields gaze shift motor behaviors that exhibits statistics similar to those exhibited by human observers.
+
+Brownian motion is a rather inefficient foraging strategy and, further, when applied to model saccadic gaze shifts it does not account for the shape of their distribution [16]; thus, Le?vy flights have been proposed by specifying p(l) as a Cauchy distribution [17,14].
+
+
+it should be remarked that the stochastic process underlying long gaze shifts should be in principle subdivided in two steps: flight proposal and acceptance of the flight; these two steps together provide an approx- imation of a highly complex sensory-motor process, which is far from being fully understood [2,3]. 
+
+In this perspective, the plausible center of a new fixation rnew?t?, should be eventually accepted on the basis of some decision function D?rnew?t?,T?, where T is a parameter or a set of parameters akin to summarize the ‘‘readiness’’ of the forager to engage in the flight.
 
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+animals acquire and use visual information in order to develop neuromorphic vision algorithms using tools from machine learning, computer vision, and computational neuroscience. - Christopher Kanan
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+The Physics of Foraging
+
+
+12.4 Eye microsaccades
+Another fascinating phenomenon is microsaccades [110]. 
+
+A saccade is a quick, simultaneous movement of both eyes that occurs when, e.g., the viewer wants to remain focused on a single spot (visual fixation) or to engage in rapid eye movement [228]. 
+
+Microsaccades are involuntary, smaller versions of fixational saccades, and their role has been a topic of much debate [227].
+
+A study by Engbert [110] explored the similarities between microsaccades and foraging. 
+
+Fixation eye movements, according to one hypothesis, represent a search process. 
+
+Engbert examined the distribution of microsaccades and found a power law exponent ? ≈ 4.41. 
+
+This value for the exponent guarantees finite second moments, thus excluding Le?vy processes, but it is also much fatter (i.e., leptokurtic)
+
+Superdiffusive random searches
+Gaussian. 
+
+Brockmann and Geisel [53] showed that human visual scanpaths will be geometrically similar to Le?vy flights if one assumes that the visual system minimizes the typical time needed to process a visual scene.
+
+A definitive understanding of the utility of microsaccades is still an open ques- tion, but some points merit discussion. 
+
+Are microsaccades connected to a visual optimization process that is driven by evolutionary selection? 
+
+Tiny involuntary movements (i.e., those not triggered by conscious cognitive signals) may help pre- pare the eyes to perceive a new image that is not yet in focus, thus serving as an anticipatory preparation mechanism [237]. 
+
+Such a mechanism would improve the organism’s ability to switch between different spots, thus giving it an adaptive advantage. Note that visual adaptations benefit both predator (to rapidly detect prey against a background) and prey (to rapidly localize an approaching predator). 
+
+Per- haps microsaccades are involuntary because voluntary movements are unnecessary and more costly neurophysiologically. 
+
+Perhaps also, for identical reasons, they are micromovements rather than full saccades.
 
 
 
 
-\cite{kennedy2010particle}
-\cite{yang2009cuckoo}
-\cite{yang2010firefly}
-\cite{gandomi2013cuckoo}
-\cite{yang2010eagle}
-\cite{yang2013computational}
-\cite{pomerleau1989alvinn}
-\cite{mitchell1997machine}
-\cite{eberhart1995new}
-\cite{nolan2003stable}
-\cite{aarts1988simulated}
-\cite{fisher1936use}
-\cite{gorman1988analysis}
-\cite{nourani1998comparison}
-\cite{hajek1988cooling}
-\cite{henderson2003theory}
-\cite{rakitianskaia2012training}
-\cite{vilovic2009using}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+@article{liang2012survey,
+  title={A survey on computing L{\'e}vy stable distributions and a new MATLAB toolbox},
+  author={Liang, Yingjie and Chen, Wen},
+  journal={Signal Processing},
+  year={2012},
+  publisher={Elsevier}
+}
+
+
+L\'evy stable distributions are a rich class of probability distributions and have many intriguing mathematical properties [1]. 
+
+
+The class is generally defined by a char- acteristic function and its complete specification requires four parameters: stability index a, skewness parameter b, scale parameter g, and location parameter d with varying ranges
+
+It is worthy of noting that the well-known Gaussian and Cauchy distributions are its special cases when its stability index a is 2 and 1, respectively. 
+
+Thus, the L\'evy stable distributions provide a far more general statistical description of signals obeying power laws and have in recent decades
+
+
+found quickly increasing applications in diverse fields of signal processing [2–6].
+
+This distribution family is named after Paul L\'evy [7] for honoring his pioneer study of normalized sums of independent random variable. 
+
+Its applications, however, have long been very limited until the influential works of Mandelbrot [8] and Fama [9] suggested that it is a powerful tool to model financial time series. 
+
+Since then, L\'evy stable distributions have received great interest across disciplines such as physics, image, economics, network, mechanics, and tele- communications [10–15], thanks to its great success in fitting a broad range of empirical data exhibiting a heavy tail and skewness, which are otherwise difficult to be characterized by the traditional statistical distribution [16]. 
+
+The other reason is that the generalized central limit theorem which states that the sum of a number of independent identically distributed random variables will tend to be a L\'evy stable distribution [17].
+
+Except of its very few particular cases such as Gaussian and Cauchy, the closed form expressions of density and distribution functions of L\'evy stable distributions are not available. 
+
+In addition, its second moment or variance is not finite except of its extreme case, Gaussian distribution. 
+
+These facts have long obstructed the applications of L\'evy stable distributions to practical problems [18]. 
+
+To overcome these troublesome issues, several efforts have been made to numerically evaluate stable distributions
+
+several parameterizations for L\'evy stable distributions proposed are useful for various technical reasons. 
+
+
+Zolotarev [19] presented five different parameterizations productively by using different skewness parameters. 
+
+However, for theoretical reasons, most researchers favor parameterization in simple form characteristic function with nice algebraic properties. 
+
+
+The parameterization most often employed now has the simplest form provided by Samorodnitsky and Taqqu [20]. 
+
+
+Since this parameterization is not continuous in stability index and poorly suited for both numerical calculation and signal modeling, 
+
+Nolan [21] gave two improved parameterizations to ensure the continuity of characteristic function.
+
+It is widely acknowledged that density and distribution functions have more advantages in depicting a specified distribution than characteristic function. 
+
+As most of the density and distribution functions of L\'evy statistics have no explicit formulas, numerical solution is only a feasible way in most applications. 
+
+In order to accurately approximate the density and distribution functions, a direct integration method and the fast Fourier transform (FFT) were developed by Nolan [22] and Mittnik, Doganoglu and Chenyao [23], respectively. 
+
+The former has advantages in handling small sample sets since it can be computed at any chosen point, whereas the latter depends on large data sets to increase accuracy at the expense of higher computing costs [24]. 
+
+In addition, the direct integration method is effective in computing density and distribution functions essentially for the whole range of the parameters and is also easy to program [25], while the FFT calculation of the characteristic function is an interpolation technique with expensive computational load and only feasible for density function with a large stability index [26].
+
+It is noted that analytical formulas of the inverse function of all most L\'evy stable distribution functions are not available. Consequently, it is not an easy task to generate such random variables. 
+
+The first breakthrough in this regard was made by Kanter [27], who gave a direct method for L\'evy stable random variables in the case a o 1, b 1⁄4 1, g 1⁄4 1, d 1⁄4 0, and then Chambers, Mallows and Stuck [28] further extended this strategy to the general case, which is called the CMS method in this paper. 
+
+Based on the method of Chambers et al., Weron [29] gave an explicit proof of this generalized scheme and regarded this method as the fastest and the most accurate [30].
+
+Similarly, the closed-form formulas of most L\'evy stable density functions are also missing, and estimate of their parameters is intractable as well. Several approaches have been proposed to estimate parameters of L\'evy stable
+
+
+distribution, including tail index estimation, quantile estimation, empirical characteristic function method and maximum likelihood (ML) estimation [31–34]. 
+
+All these methods assume that the sample set under consideration obeys a L\'evy stable distribution. 
+
+The tail index estimation is a straightforward approach and simply fits the right tail of empirical distribution function on a log–log coordinates. 
+
+However, this method is not reliable in practice for its difficulty to recognize when the Pareto tail behavior occurs [35]. 
+
+The quantile estimation is computationally the most efficient but the least accurate. 
+
+Fama and Roll [32] gave an algorithm for estimating the parameters of the symmetric L\'evy stable distributions when a 4 1. 
+
+McCulloch [36] generalized this method and devised four consistent estimators in terms of five sample quantiles and tabulated their values. 
+
+The empirical characteristic function method is computationally less efficient, yet much more accurate than the quantile estimation. 
+
+The most accurate but least efficient method is the ML estimation [39,40] which uses either direct integration method or FFT to approximate the density function. 
+
+However, in many real-world applications better accuracy does not justify the application of ML estimation, especially when calculations are to be performed on-line [41] and computational efficiency is an essential factor to consider. 
+
+Taking all factors into account, we recommend Koutrouvelis’s work on the empirical characteristic function method.
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Alpha-Stable Distributions}
-
-Index of Stability or Characteristic Exponent $\alpha\in(0,2]$\\
-Skewness Parameter $\beta\in[-1,1]$\\
-Scale Parameter $\gamma>0$\\
-Location Parameter $\delta \in \mathbb{R}$\\
-
-\subsection{Alpha Stable Code}
-\small
-\begin{verbatim}
-function [x,y]=Hahn_stable1(alpha,beta,gama,delta)
+     @book{nolan:2013,
+          author = {J. P. Nolan},
+          title = {Stable Distributions - Models for Heavy Tailed Data},
+          year = {2013},
+          publisher = {Birkhauser},
+          address = {Boston},
+          note = {In progress, Chapter 1 online at academic2.american.edu/$\sim$jpnolan}
+     } 
 
 
-mult = 4;
-n = 8; 
-xmax = 15;
-
-xmax = xmax*(2^mult);
-
-n = n + mult;
-M = 2^n;
-R = pi/xmax;
-dt = 1/(R*M);
-
-xx = (-2^(n-1)+.5:(2^(n-1)-.5))/(2^n*dt);
-
-piover2 = (pi/2);
 
 
-yy = exp( -(gama.*abs(xx)).^alpha.*( 1+i*beta.*sign(xx)
-.*tan(alpha*piover2).*( (gama.*abs(xx)).^(1-alpha)-1 ) ) + i*delta*xx );
+Stable distributions are a rich class of probability distributions that allow skewness and heavy tails and have many intriguing mathematical properties. 
+
+The class was characterized by Paul L\'evy in his study of sums of independent identically distributed terms in the 1920’s. 
+
+The lack of closed formulas for densities and distribution functions for all but a few stable distributions (Gaussian, Cauchy and L\'evy, see ure 1.1), has been a major drawback to the use of stable distributions by practitioners. 
+
+There are now reliable computer programs to compute stable densities, distribution functions and quantiles. 
+
+With these programs, it is possible to use stable models in a variety of practical problems.
+
+Stable distributions have been proposed as a model for many types of physical and economic systems. 
+
+There are several reasons for using a stable distribution to describe a system. 
+
+The first is where there are solid theoretical reasons for expecting a non-Gaussian stable model, e.g. reflection off a rotating mirror yielding a Cauchy distribution, hitting times for a Brownian motion yielding a L\'evy distribution, the gravitational field of stars yielding the Holtsmark distribution; see Feller (1971) and Uchaikin and Zolotarev (1999) for these and other examples. 
+
+
+The second reason is the Generalized Central Limit Theorem which states that the only possible non-trivial limit of normalized sums of independent identically distributed terms is stable. 
+
+It is argued that some observed quantities are the sum of many small terms - the price of a stock, the noise in a communication system, etc. and hence a stable model should be used to describe such systems. 
+
+The third argument for modeling with stable distributions is empirical: many large data sets exhibit heavy tails and skewness. 
+
+The strong empirical evidence for these features combined with the Generalized Central Limit Theorem is used by many to justify the use of stable models. 
+
+Examples in finance and economics are given in Mandelbrot (1963), Fama (1965), Samuelson (1967), Roll (1970), Embrechts et al. (1997), Rachev and Mittnik (2000), McCulloch (1996); in communication systems by Stuck and Kleiner (1974), Zolotarev (1986), and Nikias and Shao (1995). 
+
+Such data sets are poorly described by a Gaussian model, but can be well described by a stable distribution.
+
+
+General stable distributions allow for varying degrees of tail heaviness and varying degrees of skewness.
+
+Other than the normal distribution, the Cauchy distribution, the L\'evy distribution, and the reflection of the L\'evy distribution, there are no known closed form expressions for general stable densities and it is unlikely that any other stable distributions have closed forms for their densities. 
+
+Zolotarev (1986) (pg. 155-158) shows that in a few cases stable densities or distribution functions are expressible in terms of certain special functions. 
+
+This may seem to doom the use of stable models in practice, but recall that there is no closed formula for the normal cumulative distribution function. 
+
+There are tables and accurate computer algorithms for the standard normal distribution function, and people routinely use those values in normal models. 
+
+We now have computer programs to compute quantities of interest for stable distributions, so it is possible to use them in practical problems.
+
+
+ a general stable distribution requires four parameters to describe: an index of stability or characteristic exponent,  a skewness parameter 
+
+ 
+ a scale parameter ? > 0 and a location parameter. 
+ 
+
+ The parameters are restricted to the range   
+ 
+ determine the form of the distribution, they may be considered shape parameters.
+ 
+ 
+ 
+ There are multiple parameterizations for stable laws and much confusion has been caused by these different parameterizations. 
+ 
+ The variety of parameterizations is caused by a combination of historical evolution, plus the numerous problems that have been analyzed using specialized forms of the stable distributions. 
+ 
+ There are good reasons to use different parameterizations in different situations. If numerical work or fitting data is required, then one parameterization is preferable. If simple algebraic properties of the distribution are desired, then another is preferred. If one wants to study the analytic properties of strictly stable laws, then yet another is useful. 
+ 
+
+  notation of the form S() for three reasons. First, the usual notation singles out ? as different and fixed. 
+  
+  In statistical applications, all four parameters  are unknown and need to be estimated; the new notation emphasizes this. 
+  
+  Second, the scale parameter is not the standard deviation (even in the Gaussian case), and the location parameter is not generally the mean. 
+  
+  So we use the neutral symbols ? for the scale (not ?) and ? for the location (not ?). And third, there should be a clear distinction between the different parameterizations; the integer k does that. 
+  
+  Users of stable distributions need to state clearly what parameterization they are using, this notation makes it explicit.
   
 
-yy1 = [yy((2^(n-1)+1):2^n), yy(1:2^(n-1))];
-z = real( fft(yy1) )/(2*pi)*R;
 
-x = (2*pi)*((0:1:(M-1))/(M*R)-1/(2*R));
-y = [z((2^(n-1)+1):2^n), z(1:2^(n-1))];   
-
-T = find((x<=xmax/(2^mult)) & (x>=-xmax/(2^mult)));
-x = x(T); 
-x = x(:);
-y = y(T); 
-y = y(:);
-\end{verbatim}
-\normalsize
-
-
-
-\begin{figure}[h!]
-\leavevmode      
-\makebox{}\scalebox{.35}{\includegraphics{/Users/willhahn/Research/alpha1.png}}     
-\caption{Alpha-Stable Distributions as a function of Alpha}
-\label{}
-\end{figure}
-
-\begin{figure}[h!]
-\leavevmode      
-\makebox{}\scalebox{.35}{\includegraphics{/Users/willhahn/Research/alpha2.png}}     
-\caption{Alpha-Stable Distributions as a function of Alpha}
-\label{}
-\end{figure}
-
-\begin{figure}[h!]
-\leavevmode     
-\makebox{}\scalebox{.35}{\includegraphics{/Users/willhahn/Research/alpha3.png}}     
-\caption{Alpha-Stable Distributions as a function of Alpha}
-\label{}
-\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
 
+@incollection{plank2013levy,
+  title={L{\'e}vy or Not? Analysing Positional Data from Animal Movement Paths},
+  author={Plank, Michael J and Auger-M{\'e}th{\'e}, Marie and Codling, Edward A},
+  booktitle={Dispersal, Individual Movement and Spatial Ecology},
+  pages={33--52},
+  year={2013},
+  publisher={Springer}
+}
 
 
+The Levy walk hypothesis asserts that the optimal search strategy for a forager under speciﬁc conditions is to make successive movement steps that have uniformly random directions and lengths drawn from a probability distribution that is heavy-tailed. 
+
+This idea has generated a huge amount of interest, with numerous studies providing empirical evidence in support of the hypothesis and others criticising some of the methods employed in these. 
+
+The most common method for identifying Levy walk behaviour in movement data is to ﬁt a set of candidate distributions to the observed step lengths using maximum likelihood methods. 
+
+Commonly used candidate distributions are the exponential distribution and the power-law (Pareto) distribution, both on an inﬁnite and a ﬁnite (truncated) range. 
 
 
-\clearpage
+Data sets for which the relative ﬁt of a power-law distribution is better than that of an exponential are typically classiﬁed as Levy walks. 
 
-\appendices
-\section{Notes}
+However, the movement pattern of the L\'evy walk ´ is similar to that of an animal that switches between two behavioural modes in
+a composite correlated random walk (CCRW) movement process. 
+
+Recent studies have shown that standard approaches can misidentify the CCRW process as a Levy walk. 
+
+This misidentiﬁcation can be due to the methods used to sample and process the data, a failure to assess the absolute ﬁt of the candidate distributions, or the lack of a strong alternative model. 
+
+In this chapter, we simulate a CCRW process and show that including a composite exponential distribution in the set of candidate distributions can alleviate the problem of misidentiﬁcation. 
+
+However, in some cases sampling and processing of the CCRW data can cause a power-law distribution to have a better ﬁt than a composite exponential. 
 
 
+In such cases, the absolute goodnessof-ﬁt of the power-law distribution is typically poor, indicating that none of the candidate distributions are a good model for the data. 
+
+We discuss the relevance of these results for the analysis of empirical movement data.
+
+The Levy walk hypothesis, originally posed by Klafter et al. and Cole [ ´ 19,34] and subsequently by Viswanathan et al. [64], asserts that the optimal search strategy for a forager with limited perceptive range and no prior knowledge of the distribution of food in the environment is to move according to a Levy walk (LW). 
+
+This means taking a series of steps of (uniformly) random direction and of length l drawn from a probability distribution that is heavy-tailed, meaning that it does not have ﬁnite variance [55]. 
+
+The most commonly used such distribution is the Pareto distribution,with probability density function but the distribution of these step lengths is not important and it is the power-law tail described by (1) that characterises a Levy walk.
 
 
+In foraging models, steps are truncated at points where the forager ﬁnds a food item [64] and so the search strategy is sometimes referred to as a truncated Levy ´walk (TLW). 
 
-information gathering 
+Note that a ‘pure’ Levy walk where steps are not truncated after ´encounters is no more efﬁcient as a search strategy than movement in a straight line, as demonstrated in [10]. 
 
-compressive sensing
+Similarly, almost all theoretical LW search models rest on the assumption that each new search begins with a food item just outside the perceptive range of the forager [64]. 
 
-scanpath
+This can be thought of as representing a highly patchy distribution of food. 
 
-search strategy
+However, the advantage of any LW strategy is rapidly diminished when each search begins with the nearest food item signiﬁcantly further away than the forager’s perceptive range [31,51].
 
-forest vs meadow 
 
-gaussian vs alpha stable
+The original Levy hypothesis was motivated by the presence of heavy-tailed power-law distributions in empirical movement data from plankton [34], fruit ﬂies [19] and albatrosses [64]. 
 
-superclass of functions
+The Levy walk hypothesis has since generated a huge amount of interest, with numerous studies providing empirical evidence in
+support of the hypothesis [1, 3, 6, 15, 20, 30, 40, 48, 53, 57], and others criticising some of the methods employed in these [22–24,56]. 
 
-no longer limited to special cases
+In tandem with the empirical evidence, several studies have investigated the efﬁciency of Levy walks in various theoretical search scenarios. 
 
-analytical tools limit 
+For recent reviews of Levy walks as models of animal ´movement, see [31] and [67].
 
-abstract search mechanisms
+A key property of a non-truncated Levy walk is that it is scale-free, meaning that the sampling scale used by the observer should not affect the observed properties[52]. 
 
-injection of noise into search algorithms
+In particular, a Levy walk (LW) is known to be superdiffusive at all scales [65, 66]. 
 
-what type of noise is optimal
+However, a truncated Levy walk cannot be truly scale-free at all spatial scales given the truncation inherent in the process when food items are encountered.
 
-classically assumed that noise was a bug
 
-maybe a feature 
+Similarly, when considering an environment of ﬁnite size or the upper limit to the speed an animal can achieve, it is not possible to have arbitrarily large step lengths as could (theoretically) be generated in both the pure LW and the TLW.
 
-mathematical search
+Hence the scale-free nature of Levy walks is perhaps over-emphasised and looking for scale-free characteristics in observed movement data may not be a reliable way of detecting Levy walk behaviour.
 
-search as random walk
 
-markov chain 
+A more classical approach for modelling movement behaviour is the correlated random walk (CRW), in which there is some directional persistence from one step to the next [18, 42]. 
 
-optimization 
+In a CRW, step lengths are drawn from a distribution with ﬁnite mean and variance, such as an exponential distribution. 
 
-meta heuristic algorithms
+An important property of such distributions is that they satisfy the conditions of the central limit theorem, which implies that the random walk is diffusive in the long-term. 
 
-nature uses noise and uncertainty to compute 
+Changes in direction between successive steps are not uniformly distributed, but are drawn from some circular distribution that is typically peaked about 0, for example the von Mises distribution [39]. T
 
-now we can measure 
+he more concentrated this turning angle distribution is about 0, the more directional persistence the CRW will have in the short term.
 
-without arbitrary thresholds 
+
+In contrast to a Levy walk, a simple CRW is not scale-free and the sampling rate used by the observer is known to have a signiﬁcant effect on the apparent properties of the movement pattern in a CRW [14, 16, 28]. 
+
+Although CRWs are always diffusive over sufﬁciently long timescale, they can appear superdiffusive over short timescales, depending on the level of persistence in the movement [5,63,65]. 
+
+In this context, it should be noted that a TLW will also appear diffusive at large timescales due to the truncation of long steps.
+
+The basic CRW essentially assumes that movement is modelled as a stationary process, meaning that the parameters governing the persistence in movement do not change with time or space. 
+
+However, many animals have been observed to display intermittent behaviour, where the forager’s movements consist of a mixture
+of movement strategies (possibly different types of CRWs) [7,32,35,37,41]. 
+
+One approach to modelling this behaviour is to use a composite random walk. 
+
+This is a random walk consisting of more than one distinct behavioural phase, e.g. an extensive phase, in which the forager covers large distances with relatively little turning, and an intensive phase, in which the forager searches a smaller area with a more tortuous path. (Intensive searching is sometimes termed an area-restricted search [36].) 
+
+A composite random walk model was ﬁrst proposed as an alternative to the Levy walk strategy by B ´ enichou et al. [ ´ 12, 13]. Benhamou [10] proposed a composite two-phase random walk model for a forager searching for food in a patchy food environment based on memory of encounters. 
+
+In the ﬁrst phase, termed the intensive phase, the forager moves according to a Brownian random walk. 
+
+If after a predetermined amount of time (called the giving-up time) the forager has not located a food item, it switches to a ballistic (straight line movement) strategy until it ﬁnds a food item. 
+
+It then reverts to the intensive strategy to begin the next search. 
+
+Benhamou [10] showed that this simple composite strategy can be more efﬁcient (i.e. the mean distance travelled between food items is lower) than a truncated Levy ´ walk.
+
+Reynolds [49,50] subsequently showed that in certain contexts an even higher efﬁciency could be obtained by switching to a TLW in the second phase of the composite process, rather than to ballistic motion (which can be viewed as a special case of a LW with 
+ ! 1). 
  
-characterize numerically 
+Bartumeus and Levin [5] considered a “Levy ´ modulated” correlated random walk (CRW), where random reorientations, which
+break the short-term directional persistence of the CRW, occur after periods of time drawn from a power-law distribution. 
 
-applications 
+It was shown that this can increase the efﬁciency of the search strategy in certain contexts.
 
-characterizing human visual search behaviors
+Given the current interest and the potential implications of Levy walks being ´ observed in real animal movement data, it is important to be able to determine robustly that: (i) the observed data set is well represented by a heavy-tailed distribution, and (ii) that the movement mechanism giving rise to this observed pattern is actually a LW process and not some other mechanism. 
 
-compression of images and video 
+It is the interpretation and validity of these two points across a range of studies that had caused much of the current controversy and discussion in the recent movement ecology literature.
 
-characterizing human and animal foraging and movement behaviors 
+For example, with respect to (i), [22, 24] and [23] have demonstrated that many (but not all) of the recent studies that have reported LW behaviour in animal movement data may have been ﬂawed or have wrongly interpreted the data. 
 
-optimization and search algorithms
+Similarly, with respect to (ii), a number of recent studies have shown that there are variety of movement mechanisms far removed from a LW that can give rise to heavy-tailed or scale-free characteristics in empirical observations of the movement
+process [17,27,31,44,45,49]. 
 
-unmanned vehicles 
+Hence, although the the Levy walk may be a suitable ´ phenomenological description for a wide variety of movement processes, it may have limited relevance as an underlying mechanistic process in all but the simplest of biological scenarios.
 
-financial markets
+Standard techniques for analysing movement data are usually based on an arbitrary (spatial or temporal) discretization of the observed movement path [8, 9, 14, 16,33, 59]. 
+
+This discretization may be due to experimental constraints (as discussed in the next sections) or may be deliberate in order to determine how particular path properties change at different scales [e.g. 16, 28]. 
+
+By considering features such as the distributions of turning angles and step lengths across the movement path, it is possible to determine the most likely underlying behavioural process(es) that generate the observed pattern, e.g. distinguishing taxis from kinesis [11, 18]. 
+
+More sophisticated statistical techniques such as hidden Markov models (HMMs) and state-space models (SSMs), as reviewed in [43], have recently been developed to directly infer underlying behavioural processes and parameters from movement
+data sets. 
+
+In contrast, many of the recent studies that look for LW characteristics in observed movement data are often based only on a simple analysis of the observed step lengths where a power-law and exponential distribution are the only candidate models considered in a maximum likelihood test [2,22,23].
+
+Animal foraging paths are often observed by recording the forager’s position at equally spaced time intervals [e.g. 3, 40, 48]. 
+
+The distances between successive positional ﬁxes are then used to provide a sample of observed step lengths.
+
+Much of the empirical evidence for the Levy walk hypothesis stems from ﬁtting ´probability distributions to step length data obtained in this way and testing whether a power-law distribution provides a better ﬁt than other candidate distributions. 
+
+However, it is important to understand how the sampling rate imposed by the observer may affect the data that is subsequently generated. 
+
+In most empirical studies the aim is to collect data with as high a resolution as possible and this sampling rate is, therefore, not imposed by choice but is due to experimental or technological limitations, e.g. a limited number of signals per day from a GPS tracker.
+
+In such studies, the forager’s path is sampled at discrete time points and this imposes a sampling scale on the random walk. 
+
+Although true LW are scale-invariant, the question of whether truncated LW, composite CRW, or indeed other random search models are invariant to the sampling scale used by the observer has received relatively little attention. 
+
+Reynolds [49] looked at the effect of subsampling a LW and analysing the rediscretised data. 
+
+However, this study only examined the difference in the value of the exponent between the original step length distribution and the distribution ﬁtted to the rediscretised data. 
+
+No comparison was made between the power-law distribution and any other candidate distribution, nor was the dependence on the sampling rate or the exponent of the underlying LW investigated.
+
+Studies on the scale-invariant properties of movement paths, in particular the scaling of mean squared displacement with respect to time, have compared LW to simple CRW observed over different time scales [5,65], but have not looked at composite CRW.
+
+Plank and Codling [45] considered a composite CRW model in which the forager has two behavioural phases: an extensive phase characterised by a high speed and low tortuosity; and an intensive phase characterised by low speed and high tortuosity. 
+
+The forager’s position was recorded using a range of different sampling frequencies. 
+
+A power-law distribution and an exponential distribution were ﬁtted to the resulting data and the relative goodness-of-ﬁt of these two distributions compared. 
+
+It was shown that the sampling scale can have a dramatic effect on the observed data and that this standard ﬁtting method can produce potentially misleading results. 
+
+At certain sampling scales, the composite CRW model (where the original step length distribution is not heavy-tailed) can produce data for which a power-law distribution ﬁts better than an exponential distribution. 
+
+This occurs more frequently when there are signiﬁcant differences between the movement characteristics of the two phases. 
+
+Plank and Codling [45] also simulated truncated Levy walks and found that, whilst less sensitive to sampling scale, these can produce ´ step length data for which an exponential distribution ﬁts better than a power law. 
+
+Similarly, Codling and Plank [17] demonstrated how the use of different sampling scales can cause the step length distribution in different types of movement data to ﬁt a power-law better than an exponential distribution. 
+
+This applies particularly to data from a set of CRWs with different levels of persistence or from a three-dimensional CRW viewed in one dimension.
+
+A further issue with movement path sampling is that the sampling points do not necessarily correspond to actual turning or decision-making points in the underlying movement process. 
+
+The discretisation of the movement path and the subsequent position of the turning points within the observed path is essentially an arbitrary choice imposed by the observer [8, 14] and hence it is often difﬁcult to interpret true biological meaning from any subsequent analysis of the discretised path. 
+
+A related issue is that the weight that AIC gives to simplicity decreases as sample
+size increases [25]. 
+
+Therefore, the AIC comparison may be biased towards the composite exponential (with three ﬁtted parameters) and away from the powerlaw (with one ﬁtted parameter) for large sample sizes. 
+
+Preliminary tests with data generated from a LW nevertheless indicate that the power-law distribution is correctly selected by the AIC test over the composite exponential. 
+
+However, a thorough investigation of the dependency of this bias on sample size is still needed.
+
+The same applies to an investigation of the discrepancy between the AIC resulting from composite exponential likelihood function (4) and that of the full hidden Markov model of the composite CRW model. 
+
+Overall, the results presented in this chapter highlight the fact that commonly used sampling and data processing techniques can have a signiﬁcant impact on the distribution of observed step lengths. 
+
+The distribution that actually describes the underlying random walk step lengths (the double exponential distribution in the
+example considered here) may not provide a good ﬁt to the observed data.
+
+Not all movement data are collected by recording spatial locations at equally spaced time intervals. 
+
+For example, smart position or temperature-transmitting tags (SPOT tags) function through radio transmissions and hence require the tag to have contact with air to send data [38]. 
+
+These tags are often used to track marine mammals or marine predators [29,54] and hence spatial location is only recorded when
+the animal is at the surface. 
+
+Consequently, it is likely that any data collected on the movements of these animals have been sampled at irregular intervals that depend on the frequency and distribution of times between surfacing for the particular species of interest. 
+
+Techniques based on continuous-time random walks may aid in the analysis of this type of data set where the times between recordings are themselves a stochastic process. 
+
+In this chapter, we have only looked at the effect of regular sampling and we have not considered irregular sampling. 
+
+However, future studies with irregularly sampled positional data should consider this point in more detail.
+
+We have also shown how analysing turning angle data can help distinguish between a Levy walk, which has a uniform distribution of turning angles, and a ´random walk with directional persistence, which has a turning angle distribution peaked about zero. 
+
+If an observed data set was closely approximated by a power-law distribution of step lengths and a uniform distribution of turning angles, it would be a convincing case for a Levy walk. 
+
+However, a turning angle test is not useful if a ´turn identiﬁcation method, which removes small turning angles, has been applied
+to the data. 
+
+In such a scenario, it would be possible for the original process to be a Levy walk, but for the uniformity of the turning angle distribution to have been lost ´ through turn identiﬁcation.
+
+A key feature of the Levy walk hypothesis is that the animal is undergoing a purely random search (rather than interacting with the environment or relying on memory of encounters for example). 
+
+In most biological scenarios this is unlikely to be true and hence the Levy walk is arguably more useful as a descriptive tool ´
+for classifying particular types of movement process where both small and large steps (intensive and extensive phases) occur, rather than as a true mechanistic model for animal movement (although in very simple biological search scenarios it may
+be more appropriate). 
+
+If foragers are performing a random Levy search (or any ´other ‘purely random’ search), then one would expect bouts of intensive searching to occur at random in the environment (corresponding to a typical sequence of short steps in the LW). 
+
+Conversely, if intensive searching behaviour is correlated with resource-rich areas of the environment, this would suggest that the forager is interacting with the environment. 
+
+Unfortunately, most movement studies only record the movement data of the animal(s) of interest and do not collect information
+about the food distribution. 
+
+However, if data on the occurrence of intensive movement periods can be combined with information about the distribution of
+resources then it may be possible to determine if the movement process really is a Levy walk, or whether the path is generated by a composite movement process where the animal interacts with the environment [4,5,26].
 
 
-knowing where humans are looking important for human computer interaction shared attention 
+
+1. R.P.D. Atkinson, C.J. Rhodes, D.W. Macdonald, R.M. Anderson, Scale-free dynamics in the movement patterns of jackals. OIKOS 98, 134–140 (2002)
+2. M. Auger-Me?the?, C.C. St. Clair, M.A. Lewis, A.E. Derocher, Sampling rate and misidentifica- tion of L\'evy and non-L\'evy movement paths: comment. Ecology 92, 1699–1701 (2011)50 M.J. Plank et 
+3. D. Austin, W.D. Bowen, J.I. McMillan, Intraspecific variation in movement patterns: modelling individual behaviour in a large marine predator. Oikos 105, 15–30 (2004)
+4. F. Bartumeus, Behavioral intermittence, L\'evy patterns, and randomness in animal movement. Oikos 118, 488–494 (2009)
+5. F. Bartumeus, S.A. Levin, Fractal reorientation clocks: linking animal behavior to statistical patterns of search. Proc. Natl. Acad. Sci. 105, 19072–19077 (2008)
+6. F. Bartumeus, F. Peters, S. Pueyo, C. Marrase?, J. Catalan, Helical L\'evy walks: adjusting searching statistics to resource availability in microzooplankton. Proc. Natl. Acad. Sci. USA 100, 
+7. S. Benhamou, Spatial memory and searching efficiency. Anim. Behav. 47, 1423–1433 (1994)
+8. S. Benhamou, How to reliably estimate the tortuosity of an animal’s path: straightness,sinuosity, or fractal dimension? J. Theor. Biol. 229, 209–220 (2004)
+9. S. Benhamou, Detecting an orientation component in animal paths when the preferred directionis individual-dependent. Ecology 87, 518–528 (2006)
+10. S. Benhamou, How many animals really do the L\'evy walk? Ecology 88, 1962–1969 (2007)
+11. S. Benhamou, P. Bovet, Distinguishing between elementary orientation mechanisms by means of path analysis. Anim. Behav. 43, 371–377 (1992)
+12. O. Be?nichou, M. Coppey, P.-H. Suet, R. Voituriez, Optimal search strategies for hidden targets. Phys. Rev. Lett. 94, 198101 (2005)
+13. O. Be?nichou, C. Loverdo, M. Moreau, R. Voituriez, Two-dimensional intermittent search processes: an alternative to L\'evy flight strategies. Phys. Rev. E 74, 020102 (2006)
+14. P. Bovet, S. Benhamou, Spatial analysis of animals’ movements using a correlated random walk model. J. Theor. Biol. 131, 419–433 (1988)
+15. D. Boyer, G. Ramos-Ferna?ndez, O. Miramontes, J.L. Mateos, G. Cocho, H. Larralde, H. Ramos, F. Rojas, Scale-free foraging by primates emerges from their interaction with a complex environment. Proc. R. Soc. Lond. B 273, 1743–1750 (2006)
+16. E.A. Codling, N.A. Hill, Sampling rate effects on measurements of correlated and biased random walks. J. Theor. Biol. 233, 573–588 (2005)
+17. E.A. Codling, M.J. Plank, Turn designation, sampling rate and the misidentification of power-laws in movement path data using maximum likelihood estimates. Theor. Ecol. 4, 397–406 (2011)
+18. E.A. Codling, M.J. Plank, S. Benhamou, Random walks in biology. J. R. Soc. Interface 5,
+813–834 (2008)
+19. B.J. Cole, Fractal time in animal behaviour: the movement activity of Drosophila. Anim. Behav. 50, 1317–1324 (1995)
+20. M. de Jager, F.J. Weissing, P.M.J. Herman, B.A. Nolet, J. van de Koppel1, L\'evy walks evolve through interaction between movement and environmental complexity. Science 332, 1551–
+21. C. Dytham, Choosing and Using Statistics: A Biologist’s Guide, 3rd edn. (Wiley, New York,2011)
+22. A.M. Edwards, Using likelihood to test for L\'evy flight search patterns and for general power-law distributions in nature. J. Anim. Ecol. 77, 1212–1222 (2008)
+23. A.M. Edwards, Overturning conclusions of L\'evy flight movement patterns by fishing boats and foraging animals. Ecology 92(6), 1247–1257 (2011)
+24. A.M. Edwards, R.A. Phillips, N.W. Watkins, M.P. Freeman, E.J. Murphy, V. Afanasyev, S.V. Buldyrev, M.G.E. da Luz, E.P. Raposo, H.E. Stanley, G.M. Viswanathan, Revisiting L\'evy flight search patterns of wandering albatrosses, bumblebees and deer. Nature 449, 1044–1048 (2007)
+25. M.R. Forster, Key concepts in model selection: performance and generalizability. J. Math. Psychol. 44, 205–231 (2000)
+26. L. Giuggioli, F. Bartumeus, Animal movement, search strategies, and behavioural ecology: a cross-disciplinary way forward. J. Anim. Ecol. 79, 906–909 (2009)
+27. S. Hapca, J.W. Crawford, I.M. Young, Anomalous diffusion of heterogeneous populations characterized by normal diffusion at the individual level. J. R. Soc. Interface 6, 111–122 (2009) Analysing Positional Data 51
+28. N.A. Hill, D.P. Ha?der, A biased random walk model for the trajectories of swimming micro- organisms. J. Theor. Biol. 186, 503–526 (1997)
+29. H.-H. Hsu, S.-J. Joung, Y.-Y. Liao, K.-M. Liu, Satellite tracking of juvenile whale sharks, Rhincodon typus, in the northwestern pacific. Fish. Res. 84, 25–31 (2007)
+30. N.E. Humphries, N. Queiroz, J.R.M. Dyer, N.G. Pade1, M.K. Musy, K.M. Schaefer, D.W. Fuller, J.M. Brunnschweiler, T.K. Doyle, J.D.R. Houghton, G.C. Hays, C.S. Jones, L.R. Noble, V.J. Wearmouth, E.J. Southall, D.W. Sims, Environmental context explains L\'evy and Brownian movement patterns of marine predators. Nature 465, 1066–1069 (2010)
+31. A. James, M.J. Plank, A.M. Edwards, Assessing lvy walks as models of animal foraging. J. R. Soc. Interface 8, 1233–1247 (2011)
+32. I.D. Jonsen, R.A. Myers, M.C. James, Identifying leatherback turtle foraging behaviour from satellite telemetry using a switching state-space model. Mar. Ecol. Prog. Ser. 337, 255–264 (2007)
+33. P.M. Kareiva, N. Shigesada, Analyzing insect movement as a correlated random walk. Oecologia 56, 234–238 (1983)
+34. J. Klafter, B.S. White, M. Levandowsky, Microzooplankton feeding behavior and the L\'evy walk, in Biological Motion, ed. by G. Hoffmann, W. Alt (Springer, Berlin, 1989), pp. 281–296
+35. R.H.G. Klassen, B.A. Nolet, D. Bankert, Movement of foraging tundra swans explained by
+spatial pattern in cryptic food densities. Ecology 87, 2244–2254 (2006)
+36. A.S. Knell, E.A. Codling, Classifying area-restricted search (ARS) using a partial sum approach. Theor. Ecol. 5, 325–339 (2012)
+37. D.L. Kramer, R.L. McLaughlin, The behavioural ecology of intermittent locomotion. Am.Zool. 41, 137–153 (2001)
+38. C.E. Kuhn, D.S. Johnson, R.R. Ream, T.S. Gelatt, Advances in the tracking of marine species:using GPS locations to evaluate satellite track data and a continuous-time movement model.
+Marine Ecol. Prog. Ser. 393, 97–109 (2009)
+39. K.V. Mardia, P.E. Jupp, Directional Statitics (Wiley, New York, 1999)
+40. A. Ma?rell, J.P. Ball, A. Hofgaard, Foraging and movement paths of female reindeer: insights from fractal analysis, correlated random walks, and L\'evy flights. Can. J. Zool. 80, 854–865(2002)
+41. J.M. Morales, D.T. Haydon, J. Frair, K.E. Holsinger, J.M. Fryxell, Extracting more out of relocation data: building movement models as mixtures of random walks. Ecology 85, 2436–
+2445 (2004)
+42. C.S. Patlak, Random walk with persistence and external bias. Bull. Math. Biophys. 15, 311–338 (1953)
+43. T.A. Patterson, L. Thomas, C. Wilcox, O. Ovaskainen, J. Matthiopoulos, State-space models of individual animal movement. Trends Ecol. Evol. 23, 87–94 (2008)
+44. S. Petrovskii, A. Morozov, Dispersal in a statistically structured population. Am. Nat. 173, 278–289 (2009)
+45. M.J. Plank, E.A. Codling, Sampling scale and misidentification of L\'evy and non-L\'evy movement paths. Ecology 90, 3546–3553 (2009)
+46. M.J. Plank, E.A. Codling, Sampling rate and misidentification of L\'evy and non-L\'evy movement paths: reply. Ecology 92, 1701–1702 (2011)
+47. R Development Core Team, R: A Language and Environment for Statistical Computing. R Foundation for Statistical Computing, Vienna, Austria (2009). ISBN 3-900051-07-0
+48. G. Ramos-Ferna?ndez, J.L. Mateos, O. Miramontes, G. Cocho, H. Larralde, B. Ayala-Orozco, L\'evy walk patterns in the foraging movements of spider monkeys (Ateles geoffroyi). Behav.
+Ecol. Sociobiol. 55, 223–230 (2004)
+49. A.M. Reynolds, How many animals really do the L\'evy walk? Comment. Ecology 89, 2347-2351 (2008)
+50. A.M. Reynolds, Adaptive L\'evy walks can outperform composite Brownian walks in non-
+destructive random searching scenarios. Phys. A 388, 561–564 (2009)
+51. A.M. Reynolds, Balancing the competing demands of harvesting and safety from predation: L\'evy walk searches outperform composite brownian walk searches but only when foraging
+under the risk of predation. Physica A 389, 4740–4746 (2011)
+52 M.J. Plank et al.
+52. A.M. Reynolds, M.A. Frye, Free-flight odor tracking in Drosophila is consistent with an optimal intermittent scale-free search. PLoS ONE 2, e354 (2007)
+53. A.M. Reynolds, A.D. Smith, R. Menzel, U. Greggers, D.R. Reynolds, J.R. Riley, Displaced honey bees perform optimal scale-free search flights. Ecology 88, 1955–1961 (2007)
+54. D. Rowat, M. Gore, Regional scale horizontal and local scale vertical movements of whale sharks in the Indian Ocean off Seychelles. Fish. Res. 84, 32–40 (2007)
+55. M.F. Shlesinger, B.J. West, J. Klafter, L\'evy dynamics of enhanced diffusion: application to turbulence. Phys. Rev. Lett. 58, 1100–1103 (1987)
+56. D.W. Sims, D. Righton, J.W. Pitchford, Minimizing errors in identifying L\'evy flight behaviour of organisms. J. Anim. Ecol. 76, 222–229 (2007)
+57. D.W. Sims, E.J. Southall, N.E. Humphries, G.C. Hays, C.J.A. Bradshaw, J.W. Pitchford, A. James, M.Z. Ahmed, A.S. Brierley, M.A. Hindell, D. Morritt, M.K. Musyl, D. Righton, E.L.C. Shepard, V.J. Wearmouth, R.P. Wilson, M.J. Witt, J.D. Metcalfe, Scaling laws of marine predator search behaviour. Nature 451, 1098–1103 (2008)
+58. P. Turchin, Translating foraging movements in heterogeneous environments into the spatial distribution of foragers. Ecology 72, 1253–1266 (1991)
+59. P. Turchin, Quantitative Analysis of Movement: Measuring and Modeling Population Redistri- bution in Animals and Plants (Sinauer Associates, Sunderland, 1998)
+60. P. Turchin, F.J. Odendaal, M.D. Rausher, Quantifying insect movement in the field. Environ. Entomol. 20, 955–963 (1991)
+61. G.J.G. Upton, B. Fingleton, Spatial Data Analysis by Example. Volume 2: Categorical and Directional Data (Wiley, New York, 1989)
+62. C. Varin, N. Reid, D. Firth, An overview of composite likelihood methods. Stat. Sinica 21, 5–42 (2011)
+63. A.W. Visser, T. Kiørboe, Plankton motility patterns and encounter rates. Oecologia 143, 538– 546 (2006)
+64. G.M. Viswanathan, S.V. Buldyrev, S. Havlin, M.G.E. da Luz, E.P. Raposo, H.E. Stanley, Optimising the success of random searches. Nature 401, 911–914 (1999)
+65. G.M. Viswanathan, E.P. Raposo, F. Bartumeus, J. Catalan, M.G.E. da Luz, Necessary criterion for distinguishing true superdiffusion from correlated random walk processes. Phys. Rev. E 72, 011111 (2005)
+66. G.M. Viswanathan, E.P. Raposo, M.G.E. da Luz, L\'evy flights and superdiffusion in the context of biological encounters and random searches. Phys. Life Rev. 5, 133–150 (2008)
+67. G.M. Viswanathan, M.G.E. da Luz, E.P. Raposo, H.E. Stanley, The Physics of Foraging: An Introduction to Random Searches and Biological Encounters (Cambridge University Press, London, 2011)
+68. W. Zucchini, I.L. MacDonald, Hidden Markov Models for Time Series: An Introduction Using R (Chapman and Hall/CRC, London, 2009)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+@incollection{reynolds2013beyond,
+  title={Beyond Optimal Searching: Recent Developments in the Modelling of Animal Movement Patterns as L{\'e}vy Walks},
+  author={Reynolds, Andy},
+  booktitle={Dispersal, Individual Movement and Spatial Ecology},
+  pages={53--76},
+  year={2013},
+  publisher={Springer}
+}
+
+L\'evy walks first entered the biological literature when Shlesinger and Klafter (Growth and Form, Martinus Nijhof Publishers, Amsterdam, 1986, pp 279– 283) proposed that they can be observed in the movement patterns of foraging ants. 
+
+The fractal and superdiffusive properties of L\'evy walks can be advantageous when searching for randomly and sparsely distributed resources, prompting the suggestion that L\'evy walks represent an evolutionary optimal searching strategy. 
+
+The suggestion is supported by a plethora of empirical studies which have revealed that many organisms (a diverse range of marine predator, honeybees, Escherichia coli) have movement patterns that can approximated by L\'evy walks. 
+
+Nonetheless, L\'evy walks with their strange fractal geometry appear alien to biology and their relevance to biology has been hotly debated. 
+
+This research has sought to identify biologically plausible mechanisms by which organisms can execute L\'evy walks and to demonstrate that these movement patterns have a utility beyond the understanding and prediction of optimal searching patterns.
+
+This work has made apparent that L\'evy walks do not stand outside of the now well-established correlated random walk paradigm but are instead natural consequences of it. 
+
+Where then but there see another. Bit by bit an old man and child. In the dim void bit by bit an old man and child. Any other would do as ill. Samuel Beckett
+
+In 1828 the Scottish botanist Robert Brown reported that minuscule pollen particles suspended in water have seemingly random movements. 
+
+Einstein’s subsequent 1905–6 [29, 30] mathematical description of these random “Brownian” movement patterns has been hugely successful and now lies at the heart of the “correlated random walk paradigm”—the dominant conceptual framework for modelling animal movement patterns [104]. 
+
+Then just over two decades ago, physicists suggested that some animals have L\'evy walk movement patterns. L\'evy walks, named after the French mathematician Paul L\'evy, arose in a purely mathematical context in the first half of the last century [54]. 
+
+L\'evy walks first entered the biological literature when [94] proposed that they can be observed in the movement patterns of foraging ants. 
+
+L\'evy walks comprise clusters of short step lengths with longer movements between them. 
+
+This pattern is repeated across all scales with the resultant clusters creating fractal patterns that have no characteristic scale and such that the distribution of move lengths has an inverse power-law tail, pl.l/ l where 1 <  < 3. 
+
+Over much iteration, a L\'evy walk will be distributed much further from its starting position than a Brownian walk of the same length. 
+
+The fractal and “superdiffusive” properties of L\'evy walks can be advantageous when searching for randomly and sparsely distributed resources [108], prompting the suggestion that L\'evy walks represent an evolutionary optimal searching strategy [9, 11]. 
+
+Nonetheless, L\'evy walks with their strange fractal geometry appear alien to biology and their relevance to biology has been hotly debated [18, 40, 101], Auger-Me?the? et al. (2011). 
+
+It seemed to some that physicists and mathematicians had lost touch with biology, and especially so after it became apparent that early empirical analyses of the flight patterns of the wandering albatross [107] (. 1), which had provided the impetus for nearly two decades of research into L\'evy walks, were flawed [27].
+
+But the humble pollen has other tales to tell (which show that L\'evy movements are pertinent even in the simplest of situations). 
+
+Occasionally, one of Robert Brown’s pollen grains would have come into contact with the bottom of the dish. 
+
+It is readily seen that the distribution of straight-line distances between successive contact points has an inverse-square power-law tail. 
+
+The contact points thus form a “L\'evy flight” pattern with  D 2, a random jump process in which the distribution of jump lengths has an inverse-square power-law tail. 
+
+The distribution of time intervals between consecutive contacts has an inverse power-law tail, p.t/ / t3=2, by virtue of the Sparre Andersen Theorem [99, 100]. 
+
+Net horizontal displacements made in a time interval, t, are Gaussian distributed with mean zero and variance 2 D 2D0t where D0 is the bulk diffusivity. 
+
+Taken together these two characteristics imply that the
+distribution, of distances p .l/ / R1 el2=4D0t t3=2dt / l2, between consecutive
+contact points has an inverse-square power-law tail. 
+
+Observations of the pollen grains made at the bottom of the dish can therefore be modelled as L\'evy flights with  D 2 (. 2). 
+
+Analogous behaviour has been predicted for bulk-mediated effective surface diffusion at liquid surfaces [20]. 
+
+The L\'evy flights have fractal dimension D D   1 [95]. 
+
+The key ingredients of a L\'evy walk movement pattern,
+
+
+a power-law distribution of move lengths and fractal scaling, are thus lurking within Brownian walks and so are present within the correlated random walk paradigm, despite qualms about the biological plausibility of such properties [13, 103]. 
+
+L\'evy flights also abound once the pollen grains are liberated from watery confines and are at the mercy of the wind [4, 79, 93]. 
+
+Although these airborne movements are clearly divorced from searching they are not without consequence as they result in a patchy, fractal-like, spatial population structures very different from the structure of a homogeneous front produced by Brownian movements [21, 53, 92, 112]. 
+
+This research has sought to identify biologically plausible mechanisms by which organisms can execute L\'evy walks and to demonstrate that these movement patterns have a utility beyond the understanding and prediction of optimal searching patterns. 
+
+This work has made apparent that observations of L\'evy walks do not stand outside of the correlated random walk paradigm but are instead natural consequences of it. 
 
 
 
+Following the seminal work of [108], L\'evy walk research has been mainly focused on establishing the conditions under which L\'evy walks constitute an optimal searching strategy, and on establishing statistically reliably means of identifying such movement patterns in telemetry data [8, 9, 11, 13, 27, 28, 110]. 
+
+Nonetheless, the key to prediction and understanding of movement patterns lies in the elucidation of mechanisms underlying the observed patterns [52]. 
+
+“Without an understanding of mechanisms, one must evaluate each new stress on each new system de novo, without any scientific basis for extrapolation; with such an understanding, one has the foundation for understanding” [52].
 
 
-HVS
+One of the simplest candidate mechanisms could give rise to L\'evy walk movement patterns in terrestrial ecotones such as riparian forests, dune systems or rocky shores where strong environmental gradients force animals to forage within
+a narrow strip [10]. 
 
-human visual system
+This restriction would be realised by an animal with straight-line movements, if each time it arrives at an edge of the strip it is “deflected” back at a random angle, 0 <  <  drawn from the distribution p D 1=. 
 
+The horizontal distance travelled along the strip before encountering the opposing edge is l D L tan  where L is the width of the strip. The probability density function 
 
+are a L\'evy walk with  D 2. 
 
+Random changes in direction at the edges of an ecotone could thus have adaptive value, as  D 2 L\'evy walk movement patterns can be advantageous in random search scenarios [8, 86, 108]. 
 
+Random scattering from locations on the perimeter of broad two-dimensional landscapes (that do not have strip-like geometries), on the other hand, does not result in L\'evy walk movement patterns. 
 
-MLE
-
-fft
-
-gpu
-
-
-
-
- saccadic mechanism
-
-motor system implementation of an active random sampling strategy that the HVS has evolved in order to efficiently and effectively infer properties of the surrounding world. 
+Nonetheless, two-dimensional L\'evy walk movement patterns with  < 2 would be produced if the random scattering occurred within the landscape at markers (e.g. vegetation patches) that have a patchy fractal distribution [38]; a scenario which pollen dispersal studies have made plausible [21,53,92,112].
 
 
+I next describe four other biologically plausible mechanisms that can give rise to two-dimensional observed L\'evy walk movement patterns:
+• Serial correlation
+• Random reorientation at cues left by correlated random walkers
+• By products of advantageous foraging behaviours
+• Innate physiology
 
-real time saliency fft on gpu demo
+For many years the dominant conceptual framework for describing non-oriented animal movements has been the correlated random walk (CRW) model in which an individual’s trajectory through space is regarded as being made up of a sequence of distinct, independent randomly-oriented “moves” [104].
 
-logo
-
-
-
-
-
-  
-Further these can be thought of Markov chains
-
-CS has fewer parameter than PSO or Genetic Algorithms (GA)
-
-network 
-
-multi graph 
-
-soft computing 
-
-neural network np-complete 
-
-corn field vector 
-
-boids model 
-
-collective intelligence
-
-Boosting 
-
-which goose known how to get to canada?
-
-can a set of weak learners form a strong learner
-
-wisdom of the crowds
-
-natural parallelism 
-
-scales to large number of processors each computing the fitness of a single particle location and communicating update to the global best to a common server asynchronously 
-
-grand canyon 
-
-fat tail distribution of noise 
-
-most proposed changes will be small
-
-similar to previous design 
+ It has long been recognized that the transformation of the animal’s continuous movement path into a broken line is necessarily arbitrary and that probability distributions of move lengths and turning angles are model artefacts [104, and references therein]. 
  
-at times large scale changes in parameters to shake up system dynamics and move out of local minima 
-
-cooling schedule 
-
-typically momentum term is lowered monotonically according to a described cooling schedule 
-
-analog to the cooling of  solids crystals glasses metals 
-
-glass blowing 
-
-metal working 
-
-ceramics
-
-explore potential energy landscape 
-
-temperature provides random noise that effectively proposes novel permutations of the system 
-
-cooling forces a choice 
-
-cooling slowly improves chance ending up in global minima 
-
-advantage over metropolis hasting 
-
-very long cooling times
-
-random markov selection of new candidate 
-
-advantage to use existing knowledge of energy landscape to constrain search 
-
-orbit of dynamical system 
-
-learning rule is a dynamical system
-
-attractors 
-
-fixed point at global minima 
-
-basin of attraction 
-
-stochastic gradient decent 
-
-flocking behavior 
-
-swarm algorithms 
-
-social algorithm 
-
-genetic algorithm 
-
-geospatial metaphor 
-
-flock towards optimal solution in n-dimensional space
-
-perceptron
-
-neural network 
-
-non-linear threshold
-
-weighted sum of inputs 
-
-neuron fires if weighted sum excedes bias 
-
-output set to one
-
-activation function 
-
-required to be differential for back propagation 
-
-graph theory 
-
-set of vertex or node 
-
-set of edges 
-
-directed weighted acyclic graph 
-
-space of all possible graphs
-
-fixed topology determines space of network weights
-
-evaluation of proposed weight set is implemented though matrix multiplications and a nonlinear threshold operation 
-
-elegant implementation in vector language such as Matlab
-
-single line of code 
-
-wrapper scripts to calculate error 
-
-difference of network output with desired output 
-
-supervised learning 
-
-training set
-
-testing set
-
-validation 
-
-mapping of input and output pairs 
-
-network convergence
-
-avoid over fitting 
-
-multimodal optimization 
-
-multiple feasible solutions 
-
-find both corn fields 
-
-matrix operations can be implemented on GPU for fast operation 
-
-distribute swarm over many GPU/workstations and have separate central dedicated unit to rank fitness scores and distribute global best updates 
-
-two stage search 
-
-back propagation can be used at each particle location before fitness evaluation or back propagation can be preformed only on the global best to save resources.
-
-even relatively large parameter space
-
-transmission costs over a network for strings of n-bits
-
-transmit global best over ethernet 
-
-generate alpha-stable distribution 
-
-no closed form solution exists 
-
-numerical methods 
-
-fast Fourier transform 
-
-four parameter model 
-
-different than method of moments  
-
-gaussian distribution 
-
-levy 
-
-cauchy
-
-special case of alpha-stable 
-
-more general distributions allow heavy tails 
-
-infinite variance  
-
-meta optimization 
-
-find alpha value that optimizes utility 
-
-single gene genome 
-
-particle swarm on one dimensional landscape 
-
-swarm parameters can also determine network topology 
-
-number of hidden units 
-
-variety of feature units 
-
-final weight indicate which features of the input provide the most information 
-
-random walk 
-
-levy flights 
-
-levy distribution 
-
-optimization as markov chain 
-
-intensification 
-
-diversification 
-
-multiobjective
-
-each node in the network 
-
-related to many similar techniques 
-
-genetic algorithms 
-
-differential evolution
-
-ant colony  
-
-stigmergy 
-
-krill herd 
-
-firefly algorithm 
-
-extreme learning machine 
-
-only train output layer 
-
-Optimization as Markov Chain
-
-backpropagation swarm
-
-The neural network
-
-Particle swarm optimization
-
-evaluations of fitness function are costly in time and space 
-
-resources 
-
-search 
-
-cooperative search
-
-explore energy landscape 
-
-share information 
-
-neighborhood
-
-limited perceptual range
-
-applications in real world search 
-
-search and rescue 
-
-multi-swarm 
-
-random restart
-
-APSO does not use velocity
-
-swarm intelligence 
-
-animal herds
-
-bird flocking 
-
-ant colonies 
-
-bacterial growth biofilm 
-
-fish schooling 
-
-local minima
-
-social interaction to problem solving
-
-1995 by James Kennedy (social-psychologist) and Russell Eberhart (electrical engineer)
-
-It uses a number of agents (particles) that constitute a swarm moving around in the search space looking for the best solution
-
-Each particle is treated as a point in a N-dimensional space 
-
-according to its own experience as well as the experience of other particles
-
-personal best 
-
-global best 
-
-position
+ Dunn and Brown [26], and Alt [1, 2] were perhaps the first to address the problem. They formulated “continuous-time” CRW models. 
  
-velocity
+ In these models, velocities rather than positions evolve as a Markovian process and are exponentially autocorrelated. Integration of the velocity process gives the position process. 
+ 
+The approach pioneered by Dunn and Brown [26], and by Alt [1, 2] has recently been developed by Johnson et al. [46] who demonstrated its utility in an analysis of telemetry data for harbor seals (Phoca vitulina) and northern fur seals (Callorhinus ursinus). 
 
-current searching point 
+Reynolds [75] showed that velocity autocorrelation inevitable leads to L\'evy walk movement patterns on timescales less than the autocorrelation timescale.
 
-new searching point
+Autocorrelation must be present in all movements but is not captured in discrete correlated random walk modelling.
 
-current velocity 
+ Autocorrelation has been quantified in cell motility studies [91, and references therein] but until recently it has received scant attention in the literature on the movement patterns in “higher” animals. 
+ 
+ A notable exception to this is the analysis by Johnson et al. [46] of seal telemetry data, where it was reported that autocorrelation timescales are several hours long. 
+ 
+L\'evy walks should be discernible over these timescales.
 
-new velocity
+This advance has resonance with recent developments in the understanding of spontaneous movement of HaCaT and NHDF cells (cells of the epidermis) made in the absence of external guiding stimuli. 
 
-distance between current position and personal best 
+These movements are well represented by generalizations of the Langevin equation [91]. This modelling is phenomenological as model components are inspired by fits to experimental data. 
 
-distance between current position and global best 
+Nonetheless, a slight re-parameterization and re-interpretation of the model components leads to the model of [59] which realises L\'evy walks as Markovian stochastic processes [76]. 
 
-selection mechanism 
+This suggests that spontaneous cell movement patterns can be approximated by L\'evy walks, as first proposed by Schuster and Levandowsky [89] and that L\'evy walks could be lurking under the skin! 
 
-crossover operation 
+These movement patterns could have adaptive value because cells of the epidermis form new tissue by locating and then attaching on to one another—a random search scenario.
 
-Stochastic Inputs
+Traces of movement patterns in the form of odour trails can remain within the landscape for some time. In addition to these unintentional and perhaps unavoidable trails animals may also make deliberate scent marks. 
+
+Mammalian scent marks might, for instance, act as: a deterrent or a substitute for aggression to warn conspecifics away from occupied territory; a sex attractant or stimulant; a system for labeling the habitat for an animal’s own use in orientation or to maintain a sense of familiarity with an area; an indicator of individual identity; an alarm signal to conspecifics; and an indicator of population size [44].
+
+Reynolds [77] noted that the odour trails left behind by correlated random walkers will be fractal with fractal dimension D D 1:33, illustrating once again that fractal scaling is a property of Brownian motion. 
+
+By disrupting the movements of other animals these odours can result in reorientation. 
+
+The locations at which these changes in the direction of travel occur will therefore be fractal. 
+
+Odour- cued reorientation is therefore expected to give rise to movement patterns that can be approximated by L\'evy walks since the turning points in a L\'evy walk have fractal dimension D D   1. 
+
+With the aid of numerical simulations [77] showed that animals which randomly reorient whenever they encounter the odour trail of a Brownian walker but otherwise move in straight-lines because of “direc- tional persistence” will, indeed, have  D 2:33 L\'evy walk movement patterns. 
+
+These movement patterns are advantageous when searching for sparsely distributed resources without prior knowledge of resource locations or when information obtained during the search is difficult to process so that deterministic search rules cannot be used [8,86,108].
+
+Consequently there will be strong selection pressures for the aforementioned reorientation process when resources are sparsely distributed within unpredictable environments inhabited by correlated random walkers. 
+ 
+The presence of correlated random walkers may therefore drive the evolution of L\'evy walks when the fitness advantage exceeds the environmental noise. 
+
+Stochasticity in the form of random reorientations upon encountering odour cues could therefore have adaptive value when sensorial or cognitive animal skills do not override the need for randomness.
+
+In this picture the emergence of L\'evy walks from within the correlated random walk paradigm is dependent upon just three simple and well established ingredients: (1) landscapes are inhabited by animals that have CRW movement patterns and either intentionally or unintentionally leave behind odour trails; (2) some other animals also trace out near-straight line paths through the landscape; (3) but after encountering an odour trail abruptly change their direction of travel.
+
+The flight patterns of foraging bumblebees are of considerable interest because these bees, with a specialized worker caste, do nothing but forage uninterrupted for long periods of time (. 3). 
+
+They are not distracted by sex or territorial defence and have few predators [33]. 
+
+They are therefore ideal for testing the clear-cut outcomes of predictive mathematical models of foraging. 
+
+And this has led to a long running debate about whether bumblebees forage optimally within patches, and whether it matters [34, and references therein], This debate has been enriched by the possibility that bumblebees are executing optimal L\'evy flight searching patterns when foraging within patches [27]; an analysis based on Heinrich’s [33] classic observational study of bumblebee (Bombus terricola) movements (distances and turning angles) at clover (Trifolium repens) patches.
+
+Bumblebees foraging within a flower patch tend to approach the nearest flower but then often depart without landing or probing it, if it has been visited previously; unvisited flowers are not rejected in this manner. 
+
+Reynolds [73] replicated this forag- ing behaviour in numerical simulations. L\'evy walk patterns with   2 were found to be an inconsequential emergent property of a bumblebees’ foraging behaviour and, in this case, are not part of an innate, evolved optimal searching strategy.
+
+. 3 Bumblebees are ideal for testing the clear-cut outcomes of predictive mathematical models of foraging. 
+
+Their foraging flights are consistent with L\'evy searching theory but they are not necessarily L\'evy searching. 
+
+The results thereby provide a vivid demonstration that the key to understanding the biological, ecological and evolutionary consequences of any movement pattern lies in the elucidation of underlying mechanisms [52]. 
+
+The significance of a particular movement patterns can, in fact, vary markedly even across closely related species and perhaps even within the same organisms under different scenarios. 
+
+Honeybees (Apis mellifera), for example, unlike foraging bumblebees, do seem to execute L\'evy flights as part of an innate, evolved searching strategy, at least when searching for their hive and when searching after a known food resource has become depleted [83, 84, 87].
+
+
+L\'evy walk patterns with   2 are also known to be an emergent property of predators that use chemotaxis (odour gradient following) to locate randomly and sparsely distributed prey items [71]. 
+
+Chemotaxis also provides good solutions to the “travelling salesman problem” often minimising the total distance travelled between prey items and so often minimising the energetic costs of foraging [80]. 
+
+Taken together these findings suggest that   2 L\'evy walk patterns are a frequent emergent property of advantageous searching when searchers have some information about target locations (i.e. when the position of the nearest potential food source is known or when predators can detect the presence of odours emanating from distant food sources). 
+
+This intriguing possibility complements the widely held view that L\'evy walk processes are symptomatic of advantageous searching when searchers have little or no knowledge of target locations, and provides a new perspective on the ongoing debate about whether L\'evy walks are patterns or processes [13, 68]. 
+
+Much of this debate is a rerun of earlier deliberations about what “randomness” actually means in the context of random walks [104]. 
+
+Turchin [104] remarked “that even if animals were perfect automaton we might still choose to model such behaviour stochastically because we might not have perfect knowledge of the deterministic rules driving these animals or, if we did, because including them would require very accurate representation of all environmental “micro-cues”. 
+
+Randomness is thus a modelling convention which is useful when deterministic modelling is impractical or even unhelpful.” The approach termed “behavioural minimalism” [55] is directly analogous to thermodynamic theory in which the essentially unpredictable motion of individual molecules is described probabilistically. 
+
+The underlying philosophy is not that the finer detail does not exist, but that it is irrelevant for producing the observed patterns [52]. That is, the collective behaviour of large numbers of automaton may be indistinguishable (at the scale of the population) from that of random walkers.
+
+
+Over recent years there has been an accumulation of evidence that many animal behaviours are characterised by common scale-invariant patterns of switching between two contrasting activities over a period of time. 
+
+This is evidenced in mam- malian wake–sleep patterns [15, 56, 57], in the intermittent stop–start locomotion of Drosophila fruit flies [60], and in even the nest building behaviours of Large White x Landrace gilts (a species of the wild boar Sus scrofa) [35]. 
+
+Reynolds [81] showed that these dynamics can be modelled by a stochastic variant of Baraba?si’s model [6] for bursts and heavy tails in human dynamics. 
+
+The new model captures a tension between two competing and conflicting activities. 
+
+The durations of one type of activity are distributed according to an inverse-square power-law, mirroring the ubiquity of inverse-square power-law scaling seen in empirical data. 
+
+The durations of the second type of activity follow exponential distributions with characteristic time-scales that depend on species and metabolic rates. 
+
+This again is a common feature of animal behaviour. 
+
+In contrast to animal dynamics, “bursty” human dynamics, are characterised by power-law distributions with scaling exponents close to -1 and -3/2. 
+
+The model may account for some occurrence of L\'evy walk movement patterns where an animal is resolving a tension between two competing and conflicting actions: moving in a straight line and turning. 
+
+And in this regard L\'evy walks are no stranger than sleep–wake patterns, stop–start locomotion, and nesting building where construction competes with the need for vigilance.
+
+
+Translating observations taken at small spatial and temporal scales into expected patterns at greater scales is a major challenge in spatial ecology [48]. 
+
+The ability to scale up from observational scales is of crucial importance when assessing the potential effects of landscape heterogeneity and changes in behaviour, and in applying traditional behavioural ecology to landscape-level ecological problems [55]. 
+
+To scale from limited observations to the landscape, we must understand how to aggregate and simplify, retaining essential information without getting encumbered by unnecessary detail. 
+
+In principle this can and has been achieved by associating different modes of movement with different parameterizations of a single CRW model [32, 45, 46, 61, 62, 66, 67]. 
+
+Depending on the diffusivity (mode), K, a CRW model could, for instance, produce either long straight movements,
+
+random meanderings, or more circuitous movements. 
+
+Difficulties arise when the available observational data are not sufficient to parameterize accurately the prob-
+ability distribution function of the modes, p.K/. 
+
+In these cases the principle of scientific objectivity dictates that we be maximally uncommitted about what we do not know concerning the distribution p.K/. 
+
+The most conservative, non-committal p.K/ that is consistent with the data (e.g. with estimates for the mean value of
+K/ is obtained by maximising Shannon’s differential entropy [41–43]. 
+
+Any other distribution would assume more information than is known from the data. 
+
+In this context, Shannon’s differential entropy, H D of the average surprise of seeing an animal in a particular movement mode, K, given a distribution of modes p.K/. 
+
+A highly improbable outcome is very surprising. If there are two movement modes, K1 and K2, then the entropy is zero when there is no uncertainty, i.e. when p.K1/ D 1 and p.K2/ D 0 or when p.K1/ D 0 and p.K2/ D 1. 
+
+It is maximized when p.K1/ D p.K2/ D 1=2 as there is less uncertainty when p.K1/ ? p.K2/ because then one or other of the modes is more likely to be seen.
+
+Reynolds [82] showed that truncated  D 2 L\'evy walk movement patterns are the most conservative, maximally non-committal model of movement patterns beyond the scale of data collection when (a) CRW models embody observed movement patterns and (b) minimal or partial information/assumptions about landscape and behavioural heterogeneity are in the form of reliable estimates for the lower order moments of diffusivity (e.g. when given estimates for the mean diffusivity, or the mean and variance of the diffusivity). 
+
+L\'evy walks therefore provide a robust, universal scaling-law which describes how movement patterns change across scale, and which has the potential to become a valuable modelling tool when scaling up from limited observational data in order to assess the likely effects of landscape heterogeneity and changes in behaviour. 
+
+Reynolds’ [82] result also indicates that with landscape and behavioural heterogeneity, the unusual thing is not truncated L\'evy walk movement patterns but their absence. 
+
+In fact, large-scale, Gaussian, diffusive movement patterns, if they arise at all, would be an emergent phenomenon, not a mathematically self-evident state from which any deviation is a worrisome anomaly. 
+
+Standard methods in spatial ecology do, however, consider Gaussian statistics and diffusion as two basic ingredients of animal movement at the long-time limit [14, 65].
+
+The foregoing as illustrated that a diverse range of processes can give rise to L\'evy walk movement patterns. 
+
+Some of these processes are not selected for, thus illustrating that L\'evy walk movement patterns may have utility beyond the understanding and prediction of optimal searching patterns.
+
+Other processes (e.g. random reorientation at cues left by correlated random walkers) will only operate if there are selection pressures for of L\'evy walks.
+
+The association of L\'evy walks with optimal searching can be traced back to the theoretical and computational work of [108] which produced an idealised model of L\'evy walk searching. 
+
+In this model a searcher moves on a straight-line towards the nearest target if this target lies within the “direct perceptual range”, r; otherwise it chooses a direction at random and a distance, l, drawn from a power-law distribution, P.l/ D .  1/r1l for l ?? r and P.l/ D 0 for l < r. 
+
+The searcher then moves incrementally towards the new location whilst constantly seeking for targets within a radius, r . 
+
+If no target is detected, it stops after traversing the distance l and chooses a new direction and a new distance; otherwise it proceeds to the target. 
+
+Viswanathan et al. [108] showed that  D 2 L\'evy walks are an optimal L\'evy walk searching strategy for the location of randomly and sparsely distributed targets that can be repeatedly revisited because they are not depleted or rejected once visited. 
+
+L\'evy walks with  < 2 are nearly equally effective and outperform their  > 2 counterparts when searching “destructively” in either two- or three-dimensional arenas [8, 86]. From a mathematical perspective the difference between non-destructive and destructive searching lies in the specification of the initial conditions for the search. 
+
+In a non-destructive search each new search begins close to a previously visited target but distant from many other targets. 
+
+In a destructive search, each new search begins from a location that is distant from the surviving targets. 
+
+Reynolds [78] and then James et al. [40] noticed that the optimal L\'evy walk search strategy can be extremely sensitive to the initial conditions. 
+
+The advantages that L\'evy walks have over ballistic movements in random search scenarios are greatly reduced or removed if searches do not begin in the immediate vicinity of a target. 
+
+James et al. [40] suggested that this sensitivity shows that the optimality of L\'evy walk search is not as robust as previously thought thereby creating the impression that L\'evy walk searches are optimal in just a few special circumstances. 
+
+For two-dimensional searches this sensitivity stems, in part, from the use of point targets in numerical simulations and is less pronounced when targets are large compared with the perceptual range of the forager (. 4), or are patchily distributed. 
+
+Previously, it had been suggested wrongly that target size does not affect the optimality of searching patterns [39]. 
+
+Nonetheless, this revised understanding leaves open the specification of biologically-realistic initial conditions for L\'evy walk searches. 
+
+In the next sections I show how the ambiguity in the specification of the initial conditions for a L\'evy walk search can be resolved and argue that L\'evy walk searches can be optimal when searching under the risk of predation [78]. 
+
+I also show that L\'evy walks searches are expected to be optimal when searching for prey that can occasionally evade capture [86], and when searching is intermittent such that bouts of active searching alternate with relocation bouts during which prey cannot be detected [70, 58]. 
+
+This strand of research enlarges the framework of L\'evy search theory, and may provide a new insights into the movement patterns of a diverse range of marine predator (basking shark Cetorhinus maximus, Atlantic cod Gadus morhua, bigeyed tuna Thunnus obesus, leatherback turtles Dermochelys coriacea, and Magellanic penguins Spheniscus magellanicus) and Escherichia coli which can be modelled as L\'evy walks with   2 [37, 49, 96, 102]. 
+
+It is, however, important to acknowledge from the outset that foragers may show plasticity and Benhamou [13] and then Plank and James [68] devised a composite Brownian walk model for the location of patchily distributed targets that once visited become temporally unavailable either because they have become depleted or because of the increased risk of predation. 
+
+In this model searchers travel out from the origin of their search in a straight line until they encounter a target and then proceed to search destructively within the patch that contains this target using Brownian movements, i.e. using an area restricted search. 
+
+If a target is not located within a prescribed time, the “giving up time” then the searcher switches back to the original straight- line motion. Benhamou [13] showed that his composite Brownian walk model is more efficient than any L\'evy walk that is not responsive to conditions found in the search. 
+
+Reynolds [71, 72] subsequently pointed out that the composite Brownian walk model can, in fact, be interpreted as being an “adaptive” or responsive L\'evy walk search. 
+
+This correspondence arises because straight-line movements between targets correspond to truncated  ! 1 L\'evy walks. 
+
+Benhamou [13] and Plank and James [68] have therefore demonstrated that an adaptive L\'evy walk is better than any non-adaptive L\'evy walk when searching destructively in patchy environments. 
+
+Moreover, predictions from the composite Brownian walk are entirely consistent with standard L\'evy walk search theory; this predicts that straight-line movements are advantageous when searching destructively for sparsely distributed patches whilst Brownian movements are optimal for within-patch searching [108].
+
+Reynolds [74] then developed a new class of adaptive L\'evy walk searching model which encompassed composite Brownian models as a special case. 
+
+In these models, bouts of L\'evy walk searching alternate with bouts of more intensive Brownian walk searching. 
+
+As with the composite Brownian model switching from extensive to intensive searching is prompted by the detection of a target and switching back to extensive searching arises if a target is not located after travelling a distance equal to the giving-up time.
+
+The model reconciles L\'evy walk search theory with the ubiquity of two modes of searching by predators and with their switching searching model immediately after finding a prey [50]. 
+
+This model reduces to the “composite Brownian walk” model when  ! 1. It should be noted that the model presupposes that the prey are patchily distributed and that the predator perhaps through past experience is aware of this. 
+
+The models are thus fundamentally different from non- adaptive L\'evy walk search models [108] where it is assumed that animals have no prior knowledge of the target distribution.
+
+Prey capture does not always trigger an area restricted search [111]. 
+
+This is probably because decisions to modify behaviour after prey capture are dependent on many parameters, including the presence of other predators, the state of the forager, the cost of catching the prey, the quality of the prey patch, or predation risks. 
+
+Adaptive L\'evy walk searching models have been used to examine the trade-offs between searching efficiency and safety from predation [78]. 
+
+Only if the benefits of advantageous foraging outweigh these costs can there be strong selection pressures for L\'evy walk movement patterns. 
+
+In the absence of predation the giving-up time can be chosen to maximise foraging efficiency and in this case the searching efficiency of adaptive L\'evy walks is no better than that of composite Brownian walks. 
+
+But when foraging under the risk of predation this unconstrained optimal may not be realised because a forager must trade off food harvesting with safety [17]. 
+
+When the realised giving-up distance is much shorter than the unconstrained optimal one, L\'evy walks with   2 are advantageous. 
+
+This finding has resonance with that of [109] who argued that convoluted movement patterns confer greater fitness than straight-line paths because they reduce the risk of predation. 
+
+Straight- line paths present the most efficient means of searching for prey while also exposing the forager to maximum predation risk. 
+
+Animals that manage to trade-off food and safety by vigilance to predators while feeding from a food patch can remain within the patch for long times and are not be expected to have L\'evy walk movement patterns. 
+
+Animals that use little vigilance and manage risk via time allocation by demanding a higher feeding rate to compensate for a higher risk of predation may have L\'evy walk movement patterns. 
+
+And so despite having fundamentally different properties, L\'evy walks and composite Brownian walks can compete a priori as possible models of foraging movements. 
+
+L\'evy walks are expected in tritrophic systems and where intra-guild predation (a ubiquitous interaction, differing from competition or predation, defined as killing and eating among potential competitors) operates.
+
+the co-evolution of predators and their prey can lead to situations in which neither improves its fitness because both populations co-adapt to each other [25, 106]. 
+
+In these evolutionary arms races, improvements in the ability of a predator to detect and capture prey (e.g., heightened sensitivity to chemical, mechanical or visual signals, stronger attack reactions) are matched by compensating improvements in the ability of prey to evade detection and capture (e.g. crypsis, feigning death, strong jumps, sudden increase of size, confounding signals). 
+
+These “Red Queen” type of dynamics [105] preclude the possibility of a perfect searching/capture process. 
+
+Reynolds and Bartumeus [86] showed that  2 L\'evy walks can be optimal when searching destructively if targets occasionally evade detection and/or capture. 
+
+Searches for escapees begin close to escaped prey but distant from other prey— a scenario mirroring “non-destructive” foraging which favours  2 L\'evy walk searching. 
+
+This suggests that accounting for the co-evolutionary arms races at the predator–prey detection/reaction scales can explain to some extent the  2 L\'evy walks searching patterns at larger scales.
+
+The movements of many foragers (e.g. planktivorous fish, ground-foraging birds, and lizards) are intermittent with pauses or bouts of relatively slow movements last- ing from milliseconds to minutes [51, 63]. 
+
+This intermittency can have a variety of energetic benefits. 
+
+Endurance can also be improved by partial recovery from fatigue. Perceptual benefits can arise because pauses increase the capacity of the sensory systems to detect relevant stimuli. 
+
+Several processes, including velocity blur, relative motion detection, foveation, attention and interference between sensory systems could be involved [51]. 
+
+Searching could therefore be salutatory such that “scanning” phases during which prey can be detected alternate with “relocation” phases during which prey cannot be detected. 
+
+This trait can be incorporated into L\'evy walk searching models by associating the short moves .l < l0/ with the scanning phases whilst longer moves are associated with the relocation phases. 
+
+Intermittent L\'evy walks with   2 are an optimal search strategy for both destructive and non- destructive foragers [58, 70]. 
+
+In other words, this strategy is robustly optimally with respect to the initial conditions of the search, and so markedly different from non- intermittent L\'evy walk searching which are extremely sensitive to initial conditions [78] (. 6).
+
+Here following [108] the searching efficiency is taken to be the reciprocal of the mean distance travelled before encountering a targets, i.e., it is the mean number of targets located during a search divided by the total length of the search. 
+
+Foragers that minimize the average distance travelled between targets will therefore maximize their expected energy gain when energy expenditure increases linearly with distance travelled. 
+
+The energy costs of intermittent locomotion are, however, more complex and the energy expended in accelerations and decelerations can be more than offset by a variety of energetic benefits and by recovery from fatigue [51, and references therein], Fish such as cod and Pollack can, for instance, save energy by “burst- coasting swimming” as the drag while coasting with the body straight is only about one third of the drag while swimming. 
+
+The energetic costs of intermittent locomotion warrant further investigation because they could favour  ? 2 L\'evy walk movement patterns for some taxa.
+
+Encounter rates set bounds on prey-consumption, the risk of predation, the likeli- hood of mate-location and the spread of infectious diseases and so play a crucial role in population dynamics. 
+
+To date, however, there have not been any reported studies on the relative merits of L\'evy walk search strategies for the location of mobile targets in two-search arenas.
+
+James et al. [39] reported that ballistic movements outperform L\'evy walks and Brownian walks when searching randomly and destructively for mobile prey in one-dimensional environments, thereby overturning the previous analysis of [7]. 
+
+Data (previously unpublished but comparable to that reported on by [10]) from numerical simulations of destructive searching in two-dimensional arenas show that L\'evy walks with  ?? 2 are equally effective and outperform L\'evy walks with  > 2 when predators move with speeds that are faster than or comparable to that of their prey (. 7a–c). 
+
+Maximal encounter rates are then largely insensitive to the movement pattern of the prey. 
+
+This is not surprising and entirely consistent with numerical simulations of destructive searching for immobile targets [8, 86]. 
+
+It is evident that the prey cannot adapt their movement patterns so as to reduce the likelihood of predation. 
+
+This suggests that prey movement patterns are determined by their foraging and mating-location requirements and not by the costs of predation. 
+
+Predator movement patterns do, of course, become irrelevant when predators move much more slowly than their prey (. 7d). 
+
+A “sit-and-wait” strategy and a Brownian search are then just as effective as a L\'evy walk search. 
+
+It is thus possible for Brownian searches to have evolved naturally as one search strategy. 
+
+Nonetheless, L\'evy searches are more versatile and outperform Brownian walks when (if) searching for slowly moving prey (. 7a–c) in addition to fast moving ones. 
+
+This leads to the expectation that L\'evy searches are predominant in generalist predators whilst Brownian and correlated random walk searching is likely in some specialist predators with a narrow prey range. 
+
+Note also that ballistic movements are predictable, making the forager more vulnerable to predation (. 8).
+
+
+The research reported on here has shown that L\'evy walks do not stand outside of the correlated random walk paradigm [104] but rather are natural consequences of
+
+
+There is strong evidence for L\'evy walks in the swimming patterns of the Magellanic penguin (Spheniscus magellanicus) and other marine predators [96] and these appear to be associated with foraging. 
+
+The idealised L\'evy walk searching model of [108] suggest that these movement patterns are an optimal foraging strategy. 
+
+it and that the utility of L\'evy walk models extends well beyond the description of search behaviours.
+
+The apparent strangeness of L\'evy walks was shown to be innocuous.
+
+ After all, a pollen grain does both the Brownian and the L\'evy walk. 
+ 
+The seemingly peculiar fractal properties of L\'evy walks are also seen in Brownian walks [77]. 
+
+Power-law scaling, the hallmark of L\'evy walks, is necessarily present in continuous- time correlated random walks that take explicit account of serial correlations [75]. 
+
+And when correlated random walks represent accurately observed movement patterns, L\'evy walks are the most conservative model of movements at larger scales [82]. 
+
+This strand of research is also bridging between the separate disciplines of animal movement patterns and plant disease epidemiology. 
+
+This is generating new perspectives and questions at the interface between these two disciplines and thereby contributing to the emergence of a new synthesis that transcends traditional boundaries. 
+
+Other work [31, 98] is bridging the gap between the separate disciplines of animal and human movement patterns.
+
+The research has also extended the reach of L\'evy walk search theory to encompass the predator–prey co-evolutionary arms race [86], dynamic adaption to conditions found along the search [72, 74, 78], and physiological constraints [58, 70]. 
+
+Taken together this research suggests that  2 L\'evy walk searches represent an evolutionarily stable strategy in changing or dynamic environments [97]. 
+
+This warrants further investigation because it would reveal the extent of selection pressures for  2 L\'evy walk movement patterns.
+
+Collective movement behaviour is seen in almost every taxa and is arousing considerable amongst behavioural ecologists as well as physicists and mathematicians [5, 16, 19, 22, 23]. 
+
+On focus of attention has been group decision making. 
+
+In a Reynolds seminal study, using idealised mathematical models, Couzin et al. [23] showed how information about the location of a food source or a migration route can be transferred within groups both without signalling and when group members do not which individuals, if any, have pertinent information. 
+
+This work has demonstrated how a few individuals (approximately 5percent) within honeybee swarms can guide the group to a new nest site [90] and how relatively few informed individuals within fish schools can influence the foraging behaviours of the group [69].
+
+
+This leaves open the question of whether effective leadership and decision- making can arise when no individual in the group has pertinent information about the location of resources, i.e. the question of whether L\'evy walks movement patterns can arise in groups from social interactions. 
+
+L\'evy walks patterns of movement in groups can, as in individuals, be advantageous in random search scenarios [88]. 
+
+Preliminary considerations in this direction have shown that L\'evy walks could be an emergent property of collective movements ranging from “swarming” where there is no parallel alignment among members, as in often seen in insects, particular the Diptera, through to the high parallel movements displayed in some fish shoals. 
+
+This investigation has drawn also out further connections between Brownian and L\'evy walks.
+
+
+Consider an idealised model of collective movements in which there is one “leader” and a “follower”. 
+
+The leader moves in a straight line, changing its direction of travel only when one of the followers comes within its immediate vicinity (collision avoidance). 
+
+The follower keeps pace with the leader but has small random (Brownian) movements in the two directions orthogonal to the leaders’ direction of travel. 
+
+It can be shown (unpublished report) that the leader and so the pair are following a  D 3=2 L\'evy walk. Truncated L\'evy walks result when the follower cannot meander to arbitrarily long distances from the leader but instead remains within a “zone of attraction” that enforces group cohesion. 
+
+These findings are broadly consistent with telemetry data for midges (Anarete pritchardi Kim) flying within swarms [64]. Okubo and Chiang [64] reported that midge flights may be classified into two distinct patterns; one is a “wide” pattern, the other is a “tight” pattern. 
+
+In a wide pattern, the insect exhibits a relatively long, straight or slightly curved path that might be regarded as a free flight. After a straight path the insect shifts its motion from one direction to another. 
+
+In the tight pattern, insects exhibit a relatively short, zigzag flight that might be regarded as random motion. 
+
+How these different patterns are related to the behaviour of swarming midges is still unknown.
+
+Similarly L\'evy walk movement patterns with  D 1CN=2 are predicted to arise in highly parallel groups consisting of one leader and N followers that keep pace with the leader whilst making one-dimensional random movements (traverse to the current direction of travel of the leader). 
+
+The finding may explain the presence of L\'evy walk movement patterns in some fish that forage in shoals [96]. 
+
+The empirical observations are recovered if leaders are responsive to just two of their followers. Here it is worth noting that leaders and followers have been identified in shoals [69].
+
+Intrinsic variability in the mobility of individuals within a group may therefore have adaptive value and L\'evy walk movement patterns could be an overlooked benefit of group living. 
+
+
+A more formidable challenge is to develop an analytical theory of L\'evy walk searching that is applicable for two- and three-dimensions. 
+
+This would serve to validate numerical codes and facilitate an examination of searching in regimes that are currently inaccessible to computation, e.g. at the threshold of starvation where targets are in very dilute concentration and so detected very infrequently. 
+
+It remains to seen whether “mean field theories” of the kind developed by Viswanathan et al. [108] for one-dimensional searches can reproduce faithfully simulation data for two- and three-dimension searches. 
+
+
+The employment of entropy maximization in movement patterns also warrants further investigation because it offers new unexplored means for quantifying the information content of correlated random walk and L\'evy walk models, and for
+establishing new connections between these models. 
+
+The simplest of correlated random walk models can, for instance, be construed as being the most conservative, maximally non-committal models of animal movement patterns given only the arithmetic mean move length. 
+
+This is simply because maximisation of Shannon entropy yields an exponential distribution of move lengths [24]. 
+
+The arithmetic move length is a potentially meaningful characteristic of a movement pattern if the move lengths do not show a tendency to grow during the time course of a movement pattern. 
+
+When move lengths do tend to grow then the geometric (or logarithmic) average move length can be useful. 
+
+The geometric average of 
+
+Geometric constraints per se are not new [47] but until now had not appeared in movement ecology literature. 
+
+Models utilizing move length distributions other than the Pareto or exponential distributions are less conservative if move lengths are characterized solely in terms of either the arithmetic or geometric average; a minimal requirement for any reasonable model of animal movement pattern. 
+
+The Akaike information criterion which following [27] is now used widely to distinguish objectively between power-law and exponential distributions can, in this application, be interpreted as determining the relative appropriateness of the arithmetic and geometric averages as characterisations of the typical move length. 
+
+This is because the Akaike weight for a power-law (i.e. weight of evidence in favour of a power-law) is determined by the logarithmic average whilst the Akaike weight for an exponential is determined by the arithmetic average. 
+
+A bridge between the L\'evy walk and correlated random walk models is formed if move lengths are simultaneously characterised in terms of arithmetic and geometric average move lengths (as would be the case if individuals occasionally switched between executing L\'evy and correlated random walks or at the population
+
+level if L\'evy walkers co-exist alongside correlated random walkers). 
+
+In this case, maximisation of Shannon’s entropy leads to a gamma distribution of length moves. 
+
+This distribution has a power-law like core and an exponential tail, and was recently found to characterise accurately the flight patterns of the wandering albatross [27]. 
+
+The wandering albatross may therefore bridge the apparent divide correlated random walks and L\'evy walks. 
+
+It seems that as with the humble pollen, L\'evy walk research can still learn much from the wandering albatross.
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ W. Alt, Modelling of motility in biological systems, in ed. by ICIAM’87: Proceedings of the first international conference on industrial and applied mathematics, J. McKenna, R. Temam. (SIAM, Philadelphia, 1988), pp 15–30
+2. W. Alt, Correlation analysis of two-dimensional locomotion paths, in ‘Biological Motion: Proceedings of a workshop held in Ko?nigswinter Germany’, ed. by W. Alt, G. Hoffman. Lecture Notes in Biomathematics (Springer, Berlin, 1990), pp 254–268
+3. M. Auger-Me?the?, C. Cassady St. Clair, M.A. Lewis, A.E. Derocher, Sampling rate and misidentification of L\'evy and non-L\'evy movement patterns: comment. Ecology 92, 1699– 1701 (2011)
+4. F.C.W. AusterlitzDick, C. Dutech, E.K. Klein, S. Oddou-Muratorio, P.E. Smouse, V.L. Sork, Using genetic markers to estimate the pollen dispersal curve. Mol. Ecol. 13, 937–945 (2004)
+5. M. Ballerini, N. Cabibbo, R. Candelier, A. Cavagna, E. Cisbani, I. Giardina, V. Lecomte,
+A. Orlandi, G. Parisi, A. Procaccini, M. Viale, V. Zdravkovic, Interaction ruling animal collective behavior depends on topological rather than metric distance: Evidence from a field study. Proc. Natl. 
+6. A.L. Barabasi, The origin of bursts and heavy tails in human dynamics. Nature 435, 207–211 (2005)
+7. F. Bartumeus, J. Catalan, U.L. Fulco, M.L. Lyra, G.M. Viswanathan, Optimizing the encounter rate in biological interactions: L\'evy versus Brownian strategies. Phys. Rev. Lett. 88, article 097901 
+8. F. Bartumeus, M.G.E. da Luz, G.M. Viswanathan, J. Catalan, Animal search strategies: a quantitative random search analysis. Ecology 86, 3078–3087 (2005)
+9. F. Bartumeus, L\'evy processes in animal movement: an evolutionary hypothesis. Fractals 15, 151–162 (2007)
+10. F. Bartumeus, P. Ferna?ndez, M.G.E. da Luz, J. Catalan, R.V. Sole?, S.A. Levin, Superdiffusion and encounter rates in diluted, low dimensional worlds. Eur. Phys. J. Spec. Top. 157, 157–166 
+11. F. Bartumeus, Behavioral intermittence, L\'evy patterns, and randomness in animal movement. Oikos 118, 488–494 (2009)
+12. F. Bartumeus, J. Catalan, Optimal search behavior and classic foraging theory. J. Phys. A 42(article), 434002 (2009)
+13. S. Benhamou, How many animals really do the L\'evy walk? Ecology 88, 518–528 (2007)
+14. H.C. Berg, Random Walks in Biology (Princeton University Press, Princeton, New Jersey,
+1983).Beyond Optimal Searching: Recent Developments in the Modelling of Animal . . . 73
+15. M.S. Blumberg, A.M.H. Seelje, S.B. Lowen, A.E. Karlson, Dynamics of sleep-wake cyclicity in developing rats. Proc. Natl. Acad. Sci. 102, 14680–14864 (2005)
+16. N.W. Bode, D.W. Franks, A.J. Woods, Limited interactions in flocks: relating model simulations to empirical data. R. Soc. Interface (2010). doi:10.1098/rsif.2010.0397
+17. J.S. Brown, Vigilance, patch use and habitat selection: Foraging under predation risk. Evol. Ecol. Res. 1, 49–71 (1999)
+18. M. Buchanan, The mathematical mirror to animal nature. Nature 453, 714–716 (2008)
+19. J. Buhl, D.J.R. Sumpter, I.D. Couzin, J.J. Hale, E. Despland, E.R. Miller, S.J. Simpson, From
+disorder to order in marching locusts. Science 312, 1402–1406 (2006)
+20. O.V. Bychuk, B. O’Shaughnessy, Anomalous surface diffusion: A numerical study. J. Chem.Phys. 101, 772–780 (1994)
+21. S.A. Cannas, D.E. Marco, M.A. Montemurro, Long range dispersal and spatial pattern formation in biological invasions. Math. Biosci. 203, 155–170 (2006)
+22. I.D. Couzin, J. Krause, R. James, G.D. Ruxton, N.R. Franks, Collective memory and spatial sorting in animal groups. J. Theor. Biol. 218, 1–11 (2002)
+23. I.D. Couzin, J. Krause, N.R. Franks, S.A. Levin, Effective leadership and decision-making in animal groups on the move. Nature 433, 513–516 (2005)
+24. T.M. Cover, J.A. Thomas, Elements of Information Theory (Wiley, New York, 2006)
+25. R. Dawkins, J.R. Krebs, Arms races between and within species. Proc. R. Soc. Lond. B 205, 489–511 (1979)
+26. G.A. Dunn, A.F. Brown, A unified approach to analyzing cell motility. J. Cell Sci. Suppl. 8, 81–102 (1987)
+27. A.M. Edwards, R.A. Phillips, N.W. Watkins, M.P. Freeman, E.J. Murphy, V. Afanasyev,
+S.V. Buldyrev, M.G.E. da Luz, E.P. Raposo, H.E. Stanley, G.M. Viswanathan, Revisiting L\'evy walk search patterns of wandering albatrosses, bumblebees and deer. Nature 449, 1044–1048 (2007)
+28. A.M. Edwards, Overturning conclusions of L\'evy flight movement patterns by fishing boats and foraging animals. Ecology 926, 1247–1257 (2011)
+29. A. Einstein, U? ber die von der molekularkinetischen Theorie der Wa?rme geforderte Bewegung von in ruhenden Flu?ssigkeiten suspendierten Teilchen. Ann. Phys. 17, 549–506 (1905)
+30. A. Einstein, Zur theorie der Brownschen bewegung. Ann. Phys. 19, 549–560 (1906)
+31. M.C. Gonza?lez, C.A. Hidalgo, A.L. Baraba?si, Understanding individual human mobility patterns. Nature 453, 779–782 (2008)
+32. E. Gurarie, R.D. Andrews, K.L. Laidre, A novel method for identifying behavioural changes in animal movement data. Ecol. Lett. 12, 395–408 (2009)
+33. B. Heinrich, Resource heterogeneity and patterns of movement of foraging bumblebees. Oecologia 40, 235–245 (1979)
+34. B. Heinrich, Do Bumblebees Forage Optimally, and Does It Matter? Am. Zool. 23, 273–281(1983)
+35. A. Harnos, G. Horva?th, A.B. Lawrence, G. Vattay, Scaling and intermittency in animal behaviour. Phys. A 286, 312–320 (2000)
+36. B.M. Hill, A simple general approach to inference about the tail of a distribution. Ann. Stat.3, 1163–1174 (1975)
+37. N.E. Humphries, N. Queiroz, J.R.M. Dyer, N.G. Pade, M.K. Musyl, K.M. Schaefer,D.W. Fuller, J.M. Brunnschweiler, T.K. Doyle, J.D.R. Houghton, G.C. Hays, C.S. Jones, L.R. Noble, V.J. Wearmouth, E.J. Southall, D.W. Sims, Environmental context explains L\'evy and Brownian movement patterns of marine predators. Nature 465, 1066–1069 (2010)
+38. H. Isliker, I. Vlashos, Random walk through fractal environments. Phys. Rev. E 67(article), 026413 (2003)
+39. A. James, M.J. Planck, R. Brown, Optimizing the encounter rate in biological interac- tions: Ballistic versus L\'evy versus Brownian strategies. Phys. Rev. E 78(article), 051128 (2008)
+40. A. James, M.J. Plank, A.M. Edwards, Assessing L\'evy walks as models of animal foraging. J. R. Soc. Interface 8, 1233–1247 (2011)
+41. E.T. Jaynes, Information theory and statistical mechanics. Phys. Rev. 106, 620–630 (1957a)
+74 A. Reynolds
+42. E.T. Jaynes, Information theory and statistical mechanics II. Phys. Rev. 108, 171–190 (1957b)
+43. E.T. Jaynes, in Probability Theory: The Logic of Science, ed. by Bretthorst, G.L. (Cambridge University Press, Cambridge, 2003)
+44. R.P. Johnson, Scent marking in mammals. Anim. Behav. 21, 521–535 (1973)
+45. C.J. Johnson, K.L. Parker, D.C. Heard, M.P. Gillingham, Movement parameters of ungulates and scale-specific responses to the environment. J. Anim. Ecol. 71, 225–235 (2002)
+46. D.S. Johnson, J.M. London, M.A. Lea, J.W. Durban, The continuous-time correlated random walk model for animal telemetry data. Ecology 89, 1208–1215 (2008)
+47. J.N. Kapur, Maximum-Entropy Models in Science and Engineering (Wiley, New York, 1989)
+48. P.M. Kareiva, Population dynamics in spatially complex environments: theory and data. Phil.Trans. R. Soc. Lond. B 330, 175–190 (1990)
+49. E. Korobkova, T. Emonet, J.M.G. Vilar, T.S. Shimizu, P. Cluzel, From molecular noise tobehavioural variability in a single bacterium. Nature 428, 574–578 (2004)
+50. P. Knoppien, J. Reddingius, Predators with two modes of searching: a mathematical model.J. Theor. Biol. 114, 273–301 (1985)
+51. D.L. Kramer, R.L. McLaughlin, The behavioural ecology of intermittent locomotion. Am.Zool. 41, 137–153 (2001)
+52. S.A. Levin, The problem of pattern and scale in Ecology. Ecology 73, 1943–1967 (1992)
+53. C. Lett, H. Østerga?rd, A stochastic model simulating the spatiotemporal dynamics of yellow rust on wheat. Acta Phytopathologica et Entomologica Hungarica 35, 287–293 (2000)
+54. P. L\'evy, The?orie de l’addition des Variables Aale?atoires (Monographies des Probabilite?s, publie?s sous la direction de E. Borel, no. 1.) (Guathier Villars, Paris, 1937)
+55. S.L. Lima, P.A. Zollner, Towards a behavioral ecology of ecological landscapes. Trends Ecol.Evol. 11, 131–135 (1996)
+56. C.C. Lo, L.A. Nunes Amaral, S. Havlin, P.C.h. Ivanov, T. Penzel, J.H. Peterand, H.E. Stanley, Dynamics of sleep-wake transitions during sleep. Europhys. Lett. 57, 625–631 (2002)
+57. C.C. Lo, T. Chou, T. Penzel, T.E. Scammell, R.E. Strecker, H.E. Stanley, P.C.h. Ivanov, Common scale-invariant pattern of sleep-wake transitions across mammalian species. Proc.
+Natl. Acad. Sci. 101, 17545–17548 (2004)
+58. M.A. Lomholt, K. Tal, R. Metzler, J. Klafter, L\'evy strategies in intermittent search processes are advantageous. Proc. Natl. Acad. Sci. 105, 11055–11059 (2008)
+59. I. Lubashevsky, R. Friedrich, A. Heuer, Realization of Levy flights as continuous processes. Phys. Rev. E 79(article), 011110 (2009)
+60. J.R. Martin, A portrait of locomotor behaviour in Drosophila determined by a video-tracking paradigm. Behav. Process. 67, 207–219 (2004)
+61. J.M. Morales, S.P. Ellner, Scaling up animal movements in heterogeneous landscapes: the importance of behaviour. Ecology 83, 2240–2247 (2002)
+62. J.M. Morales, D.T. Haydon, J. Frair, K.E. Holsinger, J.M. Fryxell, Extracting more out of relocation data: Building movement models as mixtures of random walks. Ecology 85, 2436–
+63. W.J. O’Brien, H.I. Browman, B.I. Evans, Search strategies of foraging animals. Am. Sci. 78,
+64. A. Okubo, H.C. Chiang, An analysis of the kinematics of swarming behaviour of Anarete pritchardi Kim (Diptera: Cecidomyiidae). Res. Popul. Ecol. 16, 1–42 (1974)
+65. A. Okubo, Diffusion and Ecological Problems: Mathematical Models (Springer, Berlin, 1980)
+66. O. Ovaskainen, Habitat specific movement parameters estimated using mark-recapture data and diffusion model. Ecology 85, 242–257 (2004)
+67. O. Ovaskainen, H. Rekola, E. Meyke, E. Arjas, Bayesian methods for analyzing movements in heterogeneous landscapes form mark-recapture data. Ecology 89, 542–554 (2008)
+68. M.J. Plank, A. James, Optimal foraging: L\'evy pattern or process? R. Soc. Interface 5, 1077–1086 (2008)
+69. S.G. Reebs, Can a minority of informed leaders determine the foraging movements of a fish shoal? Anim. Behav. 59, 403–409 (2000) Beyond Optimal Searching: Recent Developments in the 
+70. A.M. Reynolds, On the intermittent behaviour of foraging animals. Europhys. Lett. 75, 517– 520 (2006)
+71. A.M. Reynolds, Deterministic walks with inverse-square power-law scaling are an emergent property of predators that use chemotaxis to located randomly distributed prey. Phys. Rev. E 78(article), 011906 (2008a)
+72. A.M. Reynolds, How many animals really do the L\'evy walk? Comment. Ecology 89, 2347– 2351 (2008b)
+73. A.M. Reynolds, L\'evy flight patterns are predicted to be an emergent property of a bumble- bee’s foraging strategy. Behav. Ecol. Sociobiol. 64, 19–23 (2009a)
+74. A.M. Reynolds, Adaptive L\'evy walks can outperform composite Brownian walks in non- destructive random searching scenarios. Phys. A 388, 561–564 (2009b)
+75. A.M. Reynolds, Bridging the gulf between correlated random walks and L\'evy walks: Autocorrelation as a source of L\'evy walk movement patterns. R. Soc. Interface 7, 1753–1758 (2010a)
+76. A.M. Reynolds, Can spontaneous cell movements be modelled as L\'evy walks? Phys. A 389, 273–277 (2010b)
+77. A.M. Reynolds, Animals that randomly reorient at cues left by correlated random walkers do the L\'evy walk. Am. Nat. 175, 607–613 (2010c)
+78. A.M. Reynolds, Balancing the competing demands of harvesting and safety from predation: L\'evy walk searches outperform composite Brownian walk searches but only when foraging under the risk of predation. Phys. A 389, 4740–4746 (2010d)
+79. A.M. Reynolds, Exponential and power-law contact distributions for windborne spores are representative of different atmospheric conditions. Phytopathology 101, 1465–1470 (2011a)
+80. A.M. Reynolds, Chemotaxis can provide biological organisms with good solutions to the travelling salesman problem. Phys. Rev. E 83, 052901 (2011b)
+81. A.M. Reynolds, On the origin of bursts and heavy tails in animal dynamics. Phys. A 390, 245–249 (2011c)
+82. A.M. Reynolds, Truncated L\'evy walks are an expected outcome of correlated random walks models: Translating observations taken at small spatiotemporal scales into expected patterns at greater scales. J. R. Soc. Interface 9, 528–534 (2012d)
+83. A.M. Reynolds, A.D. Smith, R. Menzel, U. Greggers, D.R. Reynolds, J.R. Riley, Displaced honeybees perform optimal scale-free search flights. Ecology 88, 1955–1961 (2007a)
+84. A.M. Reynolds, A.D. Smith, D.R. Reynolds, N.L. Carreck, J.L. Osborne, Honeybees perform optimal scale-free searching flights when attempting to locate a food source. J. Exp. Biol. 210, 3763–
+85. A.M. Reynolds, C.J. Rhodes, The L\'evy flight paradigm: random search patterns and mechanisms. Ecology 90, 877–887 (2009)
+86. A.M. Reynolds, F. Bartumeus, Optimising the success of random destructive searching: L\'evy walks can outperform ballistic motions. J. Theor. Biol. 260, 98–103 (2009)
+87. A.M. Reynolds, J.L. Swain, A.D. Smith, A.P. Martin, J.L. Osborne, Honeybees use a L\'evy flight search strategy and odour-mediated anemotaxis to relocate food sources. Behav. Sociobiol. 64, 
+88. M.C. Santos, E.P. Raposo, G.M. Viswanathan, M.G.E. da Luz, Can collective searches profit from L\'evy walk strategies? J. Phys. A 42(article), 4340174 (2009)
+89. F.L. Schuster, M. Levandowsky, Chemosensory responses of Acanthamoeba castellani: Visual analysis of random movement and responses to chemical signals. J. Eukaryot. Microbiol. 43, 150–
+90. T.D. Seeley, Honeybee Ecology: A Study of Adaptation in Social Life (Princeton University Press, Princeton, 1985)
+91. D. Selmeczi, S. Mosler, P.H. Hagedorn, N.B. Larsen, H. Flyvbjerg, Cell motility as persistent random motion: theories from experiments. Biophys. J 89, 912–931 (2005)
+92. M.W. Shaw, Simulation of population expansion and spatial pattern when individual dispersal distributions do not decline exponentially with distance. Proc. R. Soc. B 259, 243–248 (1995)
+93. M.W. Shaw, T.D. Harwood, M.J. Wilkinson, L. Elliott, Assembling spatially explicit land- scape models of pollen and spore dispersal by wind for risk assessment. Proc. R. Soc. B 273, 1705–1713 
+94. M.F. Shlesinger, J. Klafter, L\'evy walks versus L\'evy flights. In Growth and Form, ed. by H.E. Stanley, N. Ostrowski (Martinus Nijhof Publishers, Amsterdam, 1986), pp 279–283
+95. Shlesinger, M.F., Zaslavsky, G., Frisch, U. (eds). L\'evy Flights and Related Topics in Physics
+96. D.W. Sims, E.J. Southall, N.E. Humphries, G.C. Hays, C.J.A. Bradshaw, J.W. Pitchford,A. James, M.Z. Ahmed, A.S. Brierley, M.A. Hindell, D. Moritt, M.K. Musyl, D. Righton, E.L.C. Shepard, V.J. Wearmouth, R.P. Wilson, M.J. Witt, J.D. Metcalfe, Scaling laws of marine predator search behaviour. Nature 451, 1098–1102 (2008)
+97. J.M. Smith, G.R. Price, The logic of animal conflict. Nature 246, 15–18 (1973)
+98. C. Song, T. Koren, P. Wang, A.L. Baraba?si, Modelling the scaling properties of human
+mobility. Nat. Phys. 6, 818-823 (2010)
+99. E. Sparre Andersen, On the fluctuations of sums of random variables. Math. Scand. 1, 263–
+285 (1953)
+100. E. Sparre Andersen, On the fluctuations of sums of random variables II. Math. Scand. 2,
+195–223 (1954)
+101. J. Travis, Ecology: do wandering albatrosses care about math? Science 318, 742–743 (2007)
+102. Y. Tu, G. Grinstein, How white noise generates power-law switching in bacterial flagellar
+motors. Phys. Rev. Lett. 94, 208101. (2005)
+103. P. Turchin, Fractal analyses of animal movements: a critique. Ecology 77, 2086–2090 (1996)
+104. P. Turchin, Quantitative Analysis of Movement: Measuring and Modelling Population
+Redistribution in Animals and Plants (Sinauer Associates, Sunderland, Massachusetts, 1998)
+105. L. Van Valen, A new evolutionary law. Evol. Theor 1, 1–30 (1973)
+106. G.I. Vermeij, Evolution and Escalation: An Ecological History of Life (Princeton University
+Press, Princeton, 1987)
+107. G.M. Viswanathan, V. Afanasyev, S.V. Buldyrev, E.J. Murphy, P.A. Prince, H.E. Stanley, L\'evy
+flight search patterns of wandering albatrosses. Nature 381, 413–415 (1996)
+108. G.M. Viswanathan, S.V. Buldyrev, S. Havlin, M.G.E. da Luz, E.P. Raposo, H.E. Stanley,
+Optimizing the success of random searches. Nature 401, 911–914 (1999)
+109. A.W. Visser, T. Kiørboe, Plankton motility patterns and encounter rates. Oecologia 148, 538–
+546 (2006)
+110. E.P. White, B.J. Enquist, J.L. Green, On estimating the exponent of power-law frequency
+distributions. Ecology 89, 905–912 (2008)
+111. H. Wiemerskirsch, D. Pinaud, F. Pawloswski, C.A. Bost, Does prey capture induce area-
+restricted search? A fine-scale study using GPS in a marine predator, the wandering albatross.
+Am. Nat. 170, 734–743 (2007)
+112. L.U. Wingen, J.K.M. Brown, M.W. Shaw, The population genetic structure of clonal
+organisms generated by exponentially bounded and fat-tailed dispersal. Genetics 177, 435– 448 (2007)
 
-\clearpage
-
-\bibliographystyle{IEEEtran}
-\bibliography{IEEEabrv,Hahn_PSO_Paper_Bib}
-
-\begin{IEEEbiographynophoto}{William Hahn}    
-Received his undergraduate degree in Mathematics / Physics from Guilford College in North Carolina in 2008, with a research focus in flocking and swarm behavior before joining the Center for Complex Systems and Brain Sciences at Florida Atlantic University in 2011.
-\end{IEEEbiographynophoto}
-\begin{figure}[h!]
-\leavevmode      
-\makebox{}\scalebox{1}{\includegraphics{photo.png}}       
-\end{figure}
 
 
 
-\end{document}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+@article{boccignone2013ecological,
+  title={Ecological Sampling of Gaze Shifts},
+  author={Boccignone, Giuseppe and Ferraro, Mario},
+  year={2013},
+  publisher={IEEE}
+}
+
+
+In a seminal paper [35], Brockmann and Geisel argued that a visual system producing Le ́vy flights implements a more efficient strategy of shifting gaze in a random visual environment than any strategy employing a typical scale in gaze shift magnitudes.
+
+ Further evidence of Le ́vy diffusive behavior of scanpaths has been presented in [36]. 
+ 
+ Potential functions in a Langevin equation have been first used in [33], to address scanpath generation in the framework of a foraging metaphor.
+ 
+Indeed, the heavy-tailed distributions of gaze shift ampli- tudes are close to those characterizing the foraging behavior of many animal species. Le ́vy flights have been used to model optimal searches of foraging animals, namely their moment- to-moment relocations/flights used to sample the perceived habitat [20]. 
+ 
+ However, the general applicability of Le ́vy flights in ecology and biological sciences is still open to debate. In complex environments, optimal searches are likely to result from a mixed/composite strategy, in which Brownian and Lev ́y motions can be adopted depending on the structure ofthelandscapeinwhichtheorganismmoves[21].
+ 
+ Le ́vy flights are best suited for the location of randomly, sparsely distributed patches and Brownian motion gives the best results for the location of densely but random distributed within-patch resources [37].
+
+A preliminary attempt towards a composite sampling strat- egy for modelling gaze shift mechanisms has been presented in [22].
+ 
+However, that approach only conjectured a simple binary switch between a Gaussian and a Cauchy-like walk. 
+
+While providing some promising results, the approach lacked of a general framework and did not ground its assumptions on empirical analysis of eye-tracked data. 
+
+the experiments were specifically designed to confront gaze shift magnitude distribution of subjects scanning videos (collected in a publicly available dataset, subsection IV-A), with those obtained by running an implementation of the ES model (detailed in subsection IV-C). 
+
+Indeed, the study of shift am- plitude distribution, and in particular of the corresponding complementary cumulative distribution function (CCDF), is the standard convention in the literature of different fields dealing with anomalous random walks such as foraging [21], human mobility [48], statistical physics [49].
+
+In this respect, a preliminary, non trivial problem to solve is to derive from recorded eye-tracked data the number K of motor behaviors and to infer the related α-stable distribution parameters
+
+Finally, beside theoretical relevance for modelling human behavior, the randomness of the process can be an advantage in computer vision and learning tasks. 
+
+For instance, in [58] it has been reported that a stochastic attention selection mechanism (a refinement of the algorithm proposed in [33]) enables the i-Cub robot to explore its environment up to three times faster compared to the standard WTA mechanism [5]. 
+
+stochasticity makes the robot sensitive to new signals and flexibly change its attention, which in turn enables efficient exploration of the environment as a basis for action learning [59], [60].
+
+Gaze shifts are eye movements that play an important role: the Human Visual System (HVS) achieves highest resolution in the fovea and the succession of rapid eye movements (saccades) compensates the loss of visual acuity in the periphery when looking at an object or a scene that spans more than several degrees in the observer’s field of view. 
+
+Thus, the brain directs saccades to actively reposition the center of gaze on circumscribed regions of interest, the so called “focus of attention” (FOA), to sample in detail the most relevant features of a scene, while spending only limited processing resources elsewhere.
+ 
+An average of three eye fixations per second generally occurs, intercalated by saccades, during which vision is suppressed. 
+ 
+Frequent saccades, thus, avoid to build enduring and detailed models of the whole scene. 
+ 
+Apparently evolution has achieved efficient eye movement strategies with minimal neural resources devoted to memory [13].
+ 
+In order to take into account these issues, much research has been devoted specially in the fields of computational vision (see, for instance, [9, 10, 22]).
+
+Interestingly enough, one point that is not addressed by most models is the ”noisy”, idiosyncratic variation of the random exploration exhibited by different observers when viewing the same scene, or even by the same subject along different trials [15]. 
+
+Such variations speak of the stochastic nature of scanpaths. 
+
+Indeed, at the most general level one can assume any scanpath to be the result of a random walk performed to visually sample the environment under the constraints of both the physical information provided by the stimuli (saliency or conspicuity) and the internal state of the observer, shaped by cognitive (goals, task being involved) and emotional factors. 
+
+Under this assumption, the very issue is how to model such ”biased” random walk.
+
+L ́evy flights provide a model of diffusion characterized by the occurrence of long jumps interleaved with local walk.
+
+To fully exploit diffusion dynamics, in [3], a gaze-shift model (the Con- strained L ́evy Exploration, CLE) was proposed where the scanpath is guided by a Langevin equation,
+
+on a potential U(x) modelled as a function of the saliency (landscape) and where the stochastic component ξ represents random vector sampled from a L ́evy distribution (refer to [3] for a detailed discussion, and to [11,12] for application to robot vision relying on Stochastic Attention Selection mechanisms). 
+
+The basic assumption was the ”foraging metaphor”, namely that L ́evy-like diffusive property of scanpath behavior mirrors L ́evy-like patterns of foraging behavior in many animal species [24]. 
+
+In this perspective, the L ́evy flight, as opposed, for instance, to Gaussian walk, is assumed to be essential for optimal search, where optimality is related to efficiency, that is the ratio of the number of sites visited to the total distance traversed by forager 
+
+new method, the L ́evy Hybrid Monte Carlo (LHMC) algorithm was presented, in which gaze exploration is obtained as a sampling sequence generated via a
+
+dynamic Monte Carlo technique
+
 
 
